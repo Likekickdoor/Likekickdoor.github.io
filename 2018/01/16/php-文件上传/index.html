@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
+<meta name="description" content="关于PHP上传文件 关于文件重命名  1234567upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫&apos;1.jpg&apos;,你的文件域名叫file,上传的文件在根目录下面;  $date=date(&apos;Ymdhis&apos;);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[&apos;file&apos;][&apos;nam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有关PHP上传文件">
 <meta property="og:url" content="http://yoursite.com/2018/01/16/php-文件上传/index.html">
 <meta property="og:site_name" content="LikeKickDoorBlog">
-<meta property="og:description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
+<meta property="og:description" content="关于PHP上传文件 关于文件重命名  1234567upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫&apos;1.jpg&apos;,你的文件域名叫file,上传的文件在根目录下面;  $date=date(&apos;Ymdhis&apos;);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[&apos;file&apos;][&apos;nam">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-05T08:40:27.956Z">
+<meta property="og:updated_time" content="2019-04-05T09:46:10.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关PHP上传文件">
-<meta name="twitter:description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
+<meta name="twitter:description" content="关于PHP上传文件 关于文件重命名  1234567upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫&apos;1.jpg&apos;,你的文件域名叫file,上传的文件在根目录下面;  $date=date(&apos;Ymdhis&apos;);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[&apos;file&apos;][&apos;nam">
 
 
 
@@ -341,35 +341,13 @@
       
 
       
-        <h3 id="关于PHP上传文件"><a href="#关于PHP上传文件" class="headerlink" title="关于PHP上传文件"></a>关于PHP上传文件</h3><p>1、关于文件重命名</p>
-<blockquote>
-<p>upload_move_file();//移动<br>  date()//得到当前时间,格式自己定!<br>  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;<br>  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148<br>  $fileName=$_FIFLES[‘file’][‘name’];//得到上传文件的名字<br>  $name=explode(‘.’,$fileName);//将文件名以’.’分割得到后缀名,得到一个数组<br>  $newPath=$date.’.’.$name[1];//得到一个新的文件为’20070705163148.jpg’,即新的路径</p>
-</blockquote>
-<p><a href="https://zhidao.baidu.com/question/30060099.html" target="_blank" rel="external">百度链接详解</a> </p>
-<pre><code class="php">$imgname=$_FILES[<span class="string">'myfile'</span>][<span class="string">'name'</span>];
-    $newnametail=explode(<span class="string">'.'</span>,$imgname);
-    $truename=<span class="string">'ps'</span>.<span class="string">'.'</span>.$newnametail[<span class="number">1</span>];
-    <span class="comment">//echo $imgname;</span>
-    $tmp = $_FILES[<span class="string">'myfile'</span>][<span class="string">'tmp_name'</span>];
-    <span class="comment">// echo $tmp;</span>
-    $filepath =<span class="string">'../picture/'</span>;<span class="comment">//传到的文件夹路径</span>
-    <span class="comment">//if(move_uploaded_file($tmp,$filepath.$imgname)){</span>
-    <span class="keyword">if</span>(move_uploaded_file($tmp,$filepath.$truename)){    
-        <span class="keyword">echo</span> <span class="string">"上传成功"</span>;
-        <span class="keyword">echo</span> $filepath.$truename;
-    }<span class="keyword">else</span>{
-        <span class="keyword">echo</span> <span class="string">"上传失败"</span>;
-    }
-
-<span class="comment">// 正如:书上有句话说,实践是最好的学习方法!</span>
-</code></pre>
-<h3 id="关于hexo的-md测试"><a href="#关于hexo的-md测试" class="headerlink" title="关于hexo的.md测试"></a>关于hexo的.md测试</h3><pre><code class="c"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;
-<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++){
-    sum+=i;
-}
-<span class="built_in">printf</span>(<span class="string">"This sum is:%d\t"</span>,sum);
-<span class="comment">// 以上是有关C的代码展示</span>
-</code></pre>
+        <h3 id="关于PHP上传文件"><a href="#关于PHP上传文件" class="headerlink" title="关于PHP上传文件"></a>关于PHP上传文件</h3><ol>
+<li>关于文件重命名</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">upload_move_file();<span class="comment">//移动  </span></div><div class="line">date()<span class="comment">//得到当前时间,格式自己定!  </span></div><div class="line">如; 假设当前上传的文件叫<span class="string">'1.jpg'</span>,你的文件域名叫file,上传的文件在根目录下面;  </div><div class="line">$date=date(<span class="string">'Ymdhis'</span>);<span class="comment">//得到当前时间,如;20070705163148  </span></div><div class="line">$fileName=$_FIFLES[<span class="string">'file'</span>][<span class="string">'name'</span>];<span class="comment">//得到上传文件的名字  </span></div><div class="line">$name=explode(<span class="string">'.'</span>,$fileName);<span class="comment">//将文件名以'.'分割得到后缀名,得到一个数组  </span></div><div class="line">$newPath=$date.<span class="string">'.'</span>.$name[<span class="number">1</span>];<span class="comment">//得到一个新的文件为'20070705163148.jpg',即新的路径</span></div></pre></td></tr></table></figure>
+<ol>
+<li>关于上传文件<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$imgname=$_FILES[<span class="string">'myfile'</span>][<span class="string">'name'</span>];</div><div class="line">	$newnametail=explode(<span class="string">'.'</span>,$imgname);</div><div class="line">	$truename=<span class="string">'ps'</span>.<span class="string">'.'</span>.$newnametail[<span class="number">1</span>];</div><div class="line">    <span class="comment">//echo $imgname;</span></div><div class="line">    $tmp = $_FILES[<span class="string">'myfile'</span>][<span class="string">'tmp_name'</span>];</div><div class="line">    <span class="comment">// echo $tmp;</span></div><div class="line">    $filepath =<span class="string">'../picture/'</span>;<span class="comment">//传到的文件夹路径</span></div><div class="line">    <span class="comment">//if(move_uploaded_file($tmp,$filepath.$imgname))&#123;</span></div><div class="line">	<span class="keyword">if</span>(move_uploaded_file($tmp,$filepath.$truename))&#123;	</div><div class="line">        <span class="keyword">echo</span> <span class="string">"上传成功"</span>;</div><div class="line">        <span class="keyword">echo</span> $filepath.$truename;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"上传失败"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">// 正如:书上有句话说,实践是最好的学习方法!</span></div></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -555,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于PHP上传文件"><span class="nav-number">1.</span> <span class="nav-text">关于PHP上传文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于hexo的-md测试"><span class="nav-number">2.</span> <span class="nav-text">关于hexo的.md测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于PHP上传文件"><span class="nav-number">1.</span> <span class="nav-text">关于PHP上传文件</span></a></li></ol></div>
             
 
           </div>
