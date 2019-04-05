@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,11 +82,11 @@
 <meta name="description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有关PHP上传文件">
-<meta property="og:url" content="http://yoursite.com/2018/01/16/PHP有关笔记/index.html">
-<meta property="og:site_name" content="LikekickdoorBlog">
+<meta property="og:url" content="http://yoursite.com/2018/01/16/php-文件上传/index.html">
+<meta property="og:site_name" content="LikeKickDoorBlog">
 <meta property="og:description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-16T15:28:57.732Z">
+<meta property="og:updated_time" content="2019-04-05T08:40:27.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关PHP上传文件">
 <meta name="twitter:description" content="关于PHP上传文件1、关于文件重命名  upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148  $fileName=$_FIFLES[‘file’][‘name’];//">
@@ -97,9 +97,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/01/16/PHP有关笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/16/php-文件上传/"/>
 
 
 
 
 
-  <title>有关PHP上传文件 | LikekickdoorBlog</title>
+  <title>有关PHP上传文件 | LikeKickDoorBlog</title>
   
 
 
@@ -144,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">LikekickdoorBlog</span>
+        <span class="site-title">LikeKickDoorBlog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -190,6 +190,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -206,16 +216,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            公益404
           </a>
         </li>
       
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/PHP有关笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/16/php-文件上传/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JeffLiu">
@@ -261,7 +261,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LikekickdoorBlog">
+      <meta itemprop="name" content="LikeKickDoorBlog">
     </span>
 
     
@@ -292,6 +292,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -321,18 +343,33 @@
       
         <h3 id="关于PHP上传文件"><a href="#关于PHP上传文件" class="headerlink" title="关于PHP上传文件"></a>关于PHP上传文件</h3><p>1、关于文件重命名</p>
 <blockquote>
-<p>upload_move_file();//移动<br>  date()//得到当前时间,格式自己定!<br>  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;<br>  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148<br>  $fileName=$_FIFLES[‘file’][‘name’];//得到上传文件的名字<br>  $name=explode(‘.’,$fileName);//将文件名以’.’分割得到后缀名,得到一个数组<br>  $newPath=$date.’.’.$name[1];//得到一个新的文件为’20070705163148.jpg’,即新的路径  </p>
+<p>upload_move_file();//移动<br>  date()//得到当前时间,格式自己定!<br>  如; 假设当前上传的文件叫’1.jpg’,你的文件域名叫file,上传的文件在根目录下面;<br>  $date=date(‘Ymdhis’);//得到当前时间,如;20070705163148<br>  $fileName=$_FIFLES[‘file’][‘name’];//得到上传文件的名字<br>  $name=explode(‘.’,$fileName);//将文件名以’.’分割得到后缀名,得到一个数组<br>  $newPath=$date.’.’.$name[1];//得到一个新的文件为’20070705163148.jpg’,即新的路径</p>
 </blockquote>
-<p><a href="https://zhidao.baidu.com/question/30060099.html" target="_blank" rel="external">百度链接详解</a>  </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$imgname=$_FILES[<span class="string">'myfile'</span>][<span class="string">'name'</span>];</div><div class="line">	$newnametail=explode(<span class="string">'.'</span>,$imgname);</div><div class="line">	$truename=<span class="string">'ps'</span>.<span class="string">'.'</span>.$newnametail[<span class="number">1</span>];</div><div class="line">    <span class="comment">//echo $imgname;</span></div><div class="line">    $tmp = $_FILES[<span class="string">'myfile'</span>][<span class="string">'tmp_name'</span>];</div><div class="line">    <span class="comment">// echo $tmp;</span></div><div class="line">    $filepath =<span class="string">'../picture/'</span>;<span class="comment">//传到的文件夹路径</span></div><div class="line">    <span class="comment">//if(move_uploaded_file($tmp,$filepath.$imgname))&#123;</span></div><div class="line">	<span class="keyword">if</span>(move_uploaded_file($tmp,$filepath.$truename))&#123;	</div><div class="line">        <span class="keyword">echo</span> <span class="string">"上传成功"</span>;</div><div class="line">        <span class="keyword">echo</span> $filepath.$truename;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"上传失败"</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>正如:书上有句话说,实践是最好的学习方法!  </p>
-<h3 id="关于hexo的-md测试"><a href="#关于hexo的-md测试" class="headerlink" title="关于hexo的.md测试"></a>关于hexo的.md测试</h3><pre><code class="C"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;
+<p><a href="https://zhidao.baidu.com/question/30060099.html" target="_blank" rel="external">百度链接详解</a> </p>
+<pre><code class="php">$imgname=$_FILES[<span class="string">'myfile'</span>][<span class="string">'name'</span>];
+    $newnametail=explode(<span class="string">'.'</span>,$imgname);
+    $truename=<span class="string">'ps'</span>.<span class="string">'.'</span>.$newnametail[<span class="number">1</span>];
+    <span class="comment">//echo $imgname;</span>
+    $tmp = $_FILES[<span class="string">'myfile'</span>][<span class="string">'tmp_name'</span>];
+    <span class="comment">// echo $tmp;</span>
+    $filepath =<span class="string">'../picture/'</span>;<span class="comment">//传到的文件夹路径</span>
+    <span class="comment">//if(move_uploaded_file($tmp,$filepath.$imgname)){</span>
+    <span class="keyword">if</span>(move_uploaded_file($tmp,$filepath.$truename)){    
+        <span class="keyword">echo</span> <span class="string">"上传成功"</span>;
+        <span class="keyword">echo</span> $filepath.$truename;
+    }<span class="keyword">else</span>{
+        <span class="keyword">echo</span> <span class="string">"上传失败"</span>;
+    }
+
+<span class="comment">// 正如:书上有句话说,实践是最好的学习方法!</span>
+</code></pre>
+<h3 id="关于hexo的-md测试"><a href="#关于hexo的-md测试" class="headerlink" title="关于hexo的.md测试"></a>关于hexo的.md测试</h3><pre><code class="c"><span class="keyword">int</span> i=<span class="number">0</span>,sum=<span class="number">0</span>;
 <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++){
     sum+=i;
 }
 <span class="built_in">printf</span>(<span class="string">"This sum is:%d\t"</span>,sum);
+<span class="comment">// 以上是有关C的代码展示</span>
 </code></pre>
-<p>以上是有关C的代码展示</p>
 
       
     </div>
@@ -357,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/01/blog显示关键/" rel="next" title="GithubPage的关键！">
-                <i class="fa fa-chevron-left"></i> GithubPage的关键！
+              <a href="/2017/10/01/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -366,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/17/hexo写文/" rel="prev" title="有关hexo写新文章">
-                有关hexo写新文章 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,7 +471,7 @@
                 alt="JeffLiu" />
             
               <p class="site-author-name" itemprop="name">JeffLiu</p>
-              <p class="site-description motion-element" itemprop="description">Do well everthing!</p>
+              <p class="site-description motion-element" itemprop="description">To be good at everything</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -448,12 +481,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -468,7 +510,25 @@
                 <span class="links-of-author-item">
                   <a href="https://github.com/likekickdoor" target="_blank" title="GitHub">
                     
-                      <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
                 </span>
               
             
@@ -504,6 +564,11 @@
       
 
       
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -533,7 +598,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
 
 
 
@@ -550,11 +615,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
   </div>
@@ -618,6 +678,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
