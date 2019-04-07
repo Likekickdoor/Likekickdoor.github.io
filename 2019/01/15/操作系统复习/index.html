@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="操作系统复习资料(2018)  ##第一章 操作系统概述 ###1.操作系统的基本概念    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。 ###2.操作系统的主要目标  高效性：操作系统允许以更高效的方式使用计算机系统资源 方便性：操作系统使得用户使用计算机更加方便 可扩充性 开放性###3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统知识点">
+<meta property="og:url" content="http://yoursite.com/2019/01/15/操作系统复习/index.html">
+<meta property="og:site_name" content="LikeKickDoorBlog">
+<meta property="og:description" content="操作系统复习资料(2018)  ##第一章 操作系统概述 ###1.操作系统的基本概念    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。 ###2.操作系统的主要目标  高效性：操作系统允许以更高效的方式使用计算机系统资源 方便性：操作系统使得用户使用计算机更加方便 可扩充性 开放性###3">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/01/15/操作系统复习/1.png">
+<meta property="og:updated_time" content="2019-04-06T14:42:35.134Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统知识点">
+<meta name="twitter:description" content="操作系统复习资料(2018)  ##第一章 操作系统概述 ###1.操作系统的基本概念    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。 ###2.操作系统的主要目标  高效性：操作系统允许以更高效的方式使用计算机系统资源 方便性：操作系统使得用户使用计算机更加方便 可扩充性 开放性###3">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/15/操作系统复习/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/15/操作系统复习/"/>
+
+
+
+
+
+  <title>操作系统知识点 | LikeKickDoorBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LikeKickDoorBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/15/操作系统复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JeffLiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/daxiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LikeKickDoorBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">操作系统知识点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-15T22:22:22+08:00">
+                2019-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OperatingSystem/" itemprop="url" rel="index">
+                    <span itemprop="name">OperatingSystem</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <center>操作系统复习资料(2018)</center>
+
+<p>##第一章 操作系统概述</p>
+<p>###1.操作系统的基本概念<br>    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。</p>
+<p>###2.操作系统的主要目标</p>
+<ul>
+<li><strong>高效性：操作系统允许以更高效的方式使用计算机系统资源</strong></li>
+<li><strong>方便性：操作系统使得用户使用计算机更加方便</strong></li>
+<li>可扩充性</li>
+<li>开放性<br>###3.操作系统的作用</li>
+<li>用户与计算机系统之间的接口</li>
+<li>计算机系统资源的管理者</li>
+<li>实现对计算机资源的抽象<br>###4.操作性系统的基本特征★</li>
+<li><strong>并发性</strong></li>
+<li><strong>共享性</strong></li>
+<li>虚拟性</li>
+<li>异步性</li>
+</ul>
+<p>###5.操作系统的主要功能★<br>|分类|具体工作|<br>|-|-|<br>|处理机管理|进程控制、进程同步、进程通信、进程调度|<br>|存储管理|内存分配、内存保护、地址映射、内存扩充|<br>|设备管理|缓冲区管理、设备分配、设备处理、虚拟设备管理|<br>|文件管理|文件存储空间管理、目录管理、文件读/写管理、文件保护、文件系统的安全性|<br>|用户接口|命令接口、程序接口、图形接口|</p>
+<p>##第二章 中断</p>
+<p>###1.中断的概念</p>
+<ul>
+<li>指CPU在执行一个程序时，对系统发生的某个事件(程序自身或外界的原因引起的)作出的一种反应，即CPU暂停正在执行的程序，保留当前程序的运行现场后自动转去处理相应的事件，处理完该事件后，又返回到之前的程序断点，继续执行被中断的程序。<br>###2.中断的特点</li>
+<li>随机性</li>
+<li>可恢复性</li>
+<li>自动性<br>###3.中断的作用</li>
+<li>实现CPU与I/O设备并行工作</li>
+<li>实现硬件故障处理</li>
+<li>实现人-机通信</li>
+<li>实现多道程序和分时操作</li>
+<li>实现实时处理</li>
+<li>实现应用程序和操作系统的联系</li>
+<li>实现多处理机系统中处理机之间的联系</li>
+</ul>
+<p>###<strong>4.中断的类型</strong></p>
+<ul>
+<li>按中断功能分类<ul>
+<li>硬件故障中断</li>
+<li>程序性中断</li>
+<li>外部中断</li>
+<li>I/O中断</li>
+<li>访管中断</li>
+</ul>
+</li>
+<li>按中断方式分类<ul>
+<li>强迫性中断</li>
+<li>自愿中断</li>
+</ul>
+</li>
+<li>按中断来源分类<ul>
+<li>外中断</li>
+<li>内中断</li>
+</ul>
+</li>
+</ul>
+<p>##第三章 进程和线程</p>
+<p>###1.程序的顺序执行</p>
+<p>####（1）概念</p>
+<ul>
+<li>通常可以把一个应用程序分为若干个程序段，各程序之间必须按照某种先后次序顺序执行，仅在前一程序段执行完成后，才能执行后续程序段。</li>
+</ul>
+<p>####（2）特征</p>
+<ul>
+<li>顺序性：程序的各个操作严格按照顺序执行</li>
+<li>封闭性：程序执行中独占全机，不受外界环境影响</li>
+<li>可再现性：只要程序执行时的环境和初始条件相同，当程序重复执行时，不论它的执行方式如何，其结果都是相同的</li>
+</ul>
+<p>###2.程序的并发执行</p>
+<p>####（1）特征</p>
+<ul>
+<li>间断性：程序间具有相互制约关系，所以程序的执行过程中具有暂停因素</li>
+<li>失去封闭性：由于多个程序共享资源，某程序的执行必然会受其他程序的影响</li>
+<li>不可再现性：程序在并发执行时，失去了封闭性，这也将导致其失去执行的可再现性</li>
+</ul>
+<p>###3.进程</p>
+<p>####（1）定义</p>
+<ul>
+<li>进程是程序的一次执行</li>
+<li>进程是可以和别的计算并发执行的计算</li>
+<li>进程是定义在一个数据结构上，并能够在其上进行操作的一个程序</li>
+<li>进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位</li>
+</ul>
+<p>####（2）进程状态</p>
+<ul>
+<li>两状态模型<ul>
+<li>运行态</li>
+<li>非运行态</li>
+</ul>
+</li>
+<li><strong>五状态模型</strong><ul>
+<li>新建态：已经创建进程控制块，但还没有加载到内存中</li>
+<li>就绪态：已分配到除CPU以外的所有必要资源</li>
+<li>运行态：进程已获得所需资源并占用处理机</li>
+<li>阻塞态：进程在等待某个事情的发生而暂时不能运行</li>
+<li>终止态：进程或者因为执行结束，或者因为被撤销而从可执行进程组中退出</li>
+</ul>
+</li>
+</ul>
+<hr>
+<pre><code>新建态--&gt;就绪态：系统纳入一个新进程
+就绪态--&gt;运行态：进程被调度程序选中，占据处理机而进行运行状态
+运行态--&gt;终止态：进程运行结束或被撤销，则退出系统，进入终止态
+运行态--&gt;就绪态：进程分配的占据处理机的时间片已经用完，或者是具有更高优先级的进程进入系统，当前正在运行的进程被强占了处理机，此时进程转换为就绪态
+运行态--&gt;阻塞态：进程在运行过程中，等待系统分配资源或者等待某些事件发生时，进程让出处理机转换为阻塞态
+阻塞态--&gt;就绪态：处于阻塞队列中的进程等待的资源可用或者等待的事件发生之后，进程转换为就绪态，等待处理机的分配
+</code></pre><hr>
+<p>####（3）进程控制块(PCB)<br>    进程控制块是操作系统用于记录进程状态和相关信息，控制进程运行的数据结构，是进程的唯一标识符</p>
+<ul>
+<li>进程标识符</li>
+<li>进程状态</li>
+<li>调度信息</li>
+<li>程序计数器</li>
+<li>上下文数据</li>
+<li>I/O状态信息 </li>
+</ul>
+<p>###4.线程</p>
+<ul>
+<li>把调度和分派的基本单位称为线程或轻量级进程，而把资源分配的基本单位称为进程或任务</li>
+</ul>
+<p>####（1）主要特征</p>
+<ul>
+<li>并发性：同一进程的多个线程可在一个或者多个处理机上并发或并行地执行</li>
+<li>共享性：同一进程中的所有线程共享但不拥有进程的状态和资源，且驻留在进程的同一主存空间中，可以访问相同的数据</li>
+<li>动态性：线程是程序在相应数据集上的一次执行过程，由创建而产生，至撤销而消亡，其生命周期中经历各种状态的变化</li>
+<li>结构性：<strong>线程是操作系统中调度和分派的基本单位</strong>，因此，它具有唯一的标识符和线程控制块，包含调度所需的一切信息</li>
+</ul>
+<p>####（2）线程实现</p>
+<ul>
+<li>用户级线程</li>
+<li>内核级线程</li>
+<li>组合线程</li>
+</ul>
+<p>####（3）线程模型</p>
+<ul>
+<li>多对一模型</li>
+<li>一对一模型</li>
+<li>多对多模型</li>
+</ul>
+<p>###5.互斥和同步★</p>
+<p>####（1）并发原理</p>
+<pre><code>临界区：是一段程序代码，进程将在此代码中访问共享的资源，当另一个进程已经在该代码中运行时，该进程不能再这段代码中只执行
+竞争：多个进程在访问一个共享数据时，结果依赖于它们执行的相对时间
+同步：系统中有一些相互合作、协同工作的进程
+互斥：多个线程因争用临界区内的共享资源而互斥地执行，即当一个进程在临界区访问共享资源时，其他进程不能进入该临界区访问任何共享资源
+死锁：两个或两个以上的进程因其中的每个进程都在等待其他进程执行完毕而不能继续执行
+饥饿：是指一个可运行的进程虽然能就执行，但被调度程序无限期地忽视而不能执行的情况
+</code></pre><ul>
+<li>两种制约关系<ul>
+<li>直接相互制约关系—-进程同步</li>
+<li>间接相互制约关系—-进程互斥</li>
+</ul>
+</li>
+<li>临界资源和临界区<ul>
+<li>调度原则<ul>
+<li>空闲让进：当临界资源处于空闲状态，临界区没有进程进入时，允许一个请求进入临界区的进程立即进入自己的临界区</li>
+<li>忙则等待：当已有进程进入临界区时，临界资源正在被访问，因此其他试图进入临界区的进程必须等待，以保证临界资源的互斥访问</li>
+<li>有限等待：对于要求访问临界资源的进程，应保证其在有限的时间内能够进入自己的临界访问临界资源，以免产生“死等”现象</li>
+<li>让权等待：当进程不能进入自己的临界区访问临界资源时，应当立即释放处理机，以免让进程陷入“忙等”状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>####（2）信号量机制</p>
+<ul>
+<li>基本原理<ul>
+<li>两个或多个进程通过简单的信号进行合作，一个进程可以被迫在某一位置停止，直到接受到一个特定的信号为止 </li>
+</ul>
+</li>
+<li>整型信号量</li>
+<li>记录型信号量</li>
+<li>二元信号量</li>
+</ul>
+<p>####（3）经典同步问题</p>
+<ul>
+<li>生产者-消费者问题</li>
+<li>读者-写者问题</li>
+<li>哲学家就餐问题</li>
+</ul>
+<p>##第四章 调度与死锁</p>
+<p>###1.调度原则</p>
+<ul>
+<li>调度算法的选取会受到不同因素的影响，基本原则是要保证计算机的系统性能和让用户满意</li>
+</ul>
+<p>####（1）考虑因素</p>
+<ul>
+<li><p>周转时间</p>
+<ul>
+<li>周转时间是评价批处理系统的性能、选择作业调度方式与算法的重要准则之一。周转时间是指从作业提交给系统开始，到作业完成为止的这段时间间隔<blockquote>
+<p>周转时间=后备队列等待时间+就绪队列等待时间<em>+CPU执行时间</em>+等待I/O完成时间*</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>响应时间</p>
+<ul>
+<li>响应时间可以用于评价分时系统的性能，这是选择分时系统中进程调度算法的重要准则之一。响应时间是从用户通过键盘提交一个请求开始，直至系统首次产生响应为止的时间间隔<blockquote>
+<p>响应时间=请求信息传送到处理机的时间+处理机处理信息的时间+响应信息回送到终端的时间</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>截止时间</p>
+<ul>
+<li>这是评价实时系统性能的重要指标，是选择实时调度算法的重要准则。截止时间是指某任务必须开始执行的最迟时间，或必须完成的最迟时间</li>
+</ul>
+</li>
+<li>优先权<ul>
+<li>在批处理、分时和实时系统中选择调度算法时，都可以遵循优先权准则，以便让某些紧急作业得到及时处理</li>
+</ul>
+</li>
+<li>吞吐量<ul>
+<li>吞吐量是用于评价批处理系统性能的一个重要指标，是选择批处理作业调度的重要准则。吞吐量是指在单位时间内系统所完成的作业数，与批处理作业的平均长度密切相关。</li>
+</ul>
+</li>
+<li>处理机利用率<ul>
+<li>CPU价格十分昂贵，致使处理机的利用率称为衡量性能的十分重要的指标，而调度方式和算法对处理机的利用率起着十分重要的作用</li>
+</ul>
+</li>
+<li>公平性<ul>
+<li>除了要考虑CPU得到有效利用外，系统中的其他各类资源，如内存、外存和I/O设备等，也应该得到充分的利用</li>
+</ul>
+</li>
+</ul>
+<p>###2.调度算法</p>
+<p>####（1）先来先服务调度算法*</p>
+<ul>
+<li>按照作业/进程进入队列的先后顺序进行挑选，先进入的将先进行后续步骤的处理</li>
+</ul>
+<p>####（2）短作业优先调度算法</p>
+<ul>
+<li>以进入系统的作业要求的CPU运行时间的长短为挑选依据，优先选取预计所需服务时间最短的作业进行调度</li>
+</ul>
+<p>####（3）优先级调度算法*</p>
+<ul>
+<li>根据事先设定好的进程的优先级来选取就绪队列中优先级最高的进程投入运行的算法。<ul>
+<li>抢占式：在进程运行过程中，如果有优先级更高的进程到来，则当前进程所占用的处理机会被立即剥夺，并将处理机分配给优先级更高的进程，使之运行</li>
+<li>非抢占式：在进程运行过程中，如果有优先级更高的进程到来，则当前进程继续运行直到完成或出现需要等待的事件而放弃处理机时，才调度优先级更高的进程运行</li>
+</ul>
+</li>
+</ul>
+<p>####（4）时间片轮转调度算法*</p>
+<ul>
+<li>将所有的就绪进程按先来先到服务的原则排成一个队列，每次调度时，给进程分配处理机和时间片。当执行的时间片用完时，中断该进程，并将它送往就绪队列的末尾，然后在把处理机和时间片分给就绪队列中新的队首进程。</li>
+</ul>
+<p>####（5）最高响应比优先调度算法</p>
+<ul>
+<li>为每个作业引入一个称为响应比的动态优先级指标，并使作业的优先级随着等待时间的增加而以一定的速率提高，则长作业在等待一定的时间后，必然会随着优先级的提高而又机会分配到处理机。<blockquote>
+<p>响应比=周转时间/服务时间 =（等待时间+服务时间）/服务时间 = 1+等待时间/服务时间</p>
+</blockquote>
+</li>
+</ul>
+<p>###3.死锁*</p>
+<ul>
+<li>是指计算机中多个进程因资源竞争而造成的一种相持局面，如果没有外部的作用，这些进程就不能继续执行了</li>
+</ul>
+<p>####（1）资源</p>
+<ul>
+<li>可剥夺性资源<ul>
+<li>指某进程在获得这类资源后，可以再被其他进程或系统剥夺的资源，如处理机和内存</li>
+</ul>
+</li>
+<li>非剥夺性资源<ul>
+<li>系统在把不可剥夺性资源分配给某进程后，就再不能强行收回，只能由进程用完后自行释放，如磁带机、打印机等</li>
+</ul>
+</li>
+</ul>
+<p>####（2）产生原因和必要条件*</p>
+<ul>
+<li>产生原因<ul>
+<li>资源竞争  <ul>
+<li>当系统中多个进程同时需要使用某些资源，而这些临界资源又不能同时满足其需要时，便会引起进程对资源的竞争，从而导致死锁</li>
+</ul>
+</li>
+<li>进程推进顺序不当<ul>
+<li>进程在系统中允许并发执行，但进程本身的异步性决定了在其请求和释放资源时，如果时机选择不当就有可能导致进程死锁的发生</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>必要条件<ul>
+<li><strong>互斥</strong>：进程对分配到的资源必须独立使用，即在一段时间内一个资源只能由一个进程占用，不能共享</li>
+<li><strong>请求和保持</strong>：进程已经拥有了至少一个资源，但又提出来新的资源请求，而该资源又被其他进程占有，此时允许请求进程在不释放其已获得资源的情况下进入阻塞状态，等待分配新的资源</li>
+<li><strong>不可剥夺</strong>：进程所获得的资源在未使用完成之前，不能被其他进程强行夺走，只能在使用完成后由进程自身释放</li>
+<li><strong>循环等待</strong>：当发生死锁时，必然存在一个进程和进程之间相互等待资源的环形链，使得环形链中每个进程的资源需求都得不到满足</li>
+</ul>
+</li>
+</ul>
+<p>####（3）死锁预防<br>    死锁预防是试图设计一种系统来排除发生死锁的可能性。破会死锁产生的条件中的一项或多项，就能够预防死锁情况的发生</p>
+<ul>
+<li>破坏“请求和保持”条件<ul>
+<li>系统规定所用进程对资源的申请放在运行之前一次性进行，得到了所需的所有资源或方可运行 </li>
+</ul>
+</li>
+<li>破坏“不剥夺”条件<ul>
+<li>当一个已经保持了某资源的进程，再提出新的资源请求而不能立即满足时，必须释放它已经保持的所有资源，待以后需要再重新申请 </li>
+</ul>
+</li>
+<li>破坏“环路等待”条件<ul>
+<li>系统规定将所有的资源按类型分成不同等级进行排序，并赋予不同的等级号，且所有进程请求必须严格按照资源序号递增的次序提出</li>
+</ul>
+</li>
+</ul>
+<p>####（3）死锁避免*</p>
+<ul>
+<li><p><strong>银行家算法</strong>★  </p>
+<ul>
+<li>安全状态<ul>
+<li>是指系统能按某种程序顺序来为每个进程分配其所需资源，直至满足每个进程对资源的最大需求，使每个进程都可顺利地完成</li>
+</ul>
+</li>
+<li>算法数据结构<ul>
+<li>可利用资源向量Available</li>
+<li>最大需求矩阵Max</li>
+<li>分配矩阵Allocation</li>
+<li>需求矩阵Need</li>
+</ul>
+</li>
+<li><p>算法过程</p>
+<p>   设Request(i)是进程Pi的请求向量，如果Request(i)[j]=k，表示进程Pi需要K个R(j)类型的资源。当Pi发现资源请求后系统将进行下列步骤</p>
+<p>   (1)如果Request(i)[j] &lt;= Need[i,j],边转向步骤2),否则认为出错，因为它所请求的资源数已超过它所宣布的最大值。</p>
+<p>   (2)如果Request(i)[j] &lt;= Available[i,j]，便转向步骤3)，否则，表示尚无足够资源，Pi需等待。</p>
+<p>   (3)系统试探着把资源分配给进程Pi，并需要修改下面数据结构中的数值；</p>
+<p>   Available[j] = Available[j] - Request(i)[j];</p>
+<p>   Allocation[i,j] = Allocation[i,j] + Request(i)[j];</p>
+<p>   Need[i,j] = Need[i,j] - Request(i)[j];</p>
+</li>
+<li><p>安全性算法</p>
+<p>   (1).设置两个向量</p>
+<pre><code>①　工作向量:Work=Available(表示系统可提供给进程继续运行所需要的各类资源数目)  
+</code></pre><p>   ②　Finish:表示系统是否有足够资源分配给进程(True:有;False:没有).初始化为False  </p>
+<p>   (2). 若Finish[i]=False&amp;&amp;Need&lt;=Work,则执行3;否则执行4(i为资源类别)</p>
+<p>   (3). 进程P获得第i类资源,则顺利执行直至完成，并释放资源: Work=Work+Allocation; Finish[i]=true;转2  </p>
+<p>   (4). 若所有进程的Finish[i]=true,则表示系统安全;否则,不安全!</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>####（4）死锁检测和恢复</p>
+<ul>
+<li><p>死锁检测</p>
+<pre><code>当系统分配资源时，没有采取任何限制性措施，那么系统必须检测其内部是否会出现死锁的情况，并提供相应解除死锁的手段
+</code></pre><ul>
+<li>死锁定理<ul>
+<li>如果SRAG中无环路，则系统不会出现死锁</li>
+<li>如果SRAG中有环路，且处于此环路中的每类资源只有1个，则系统出现死锁</li>
+<li>如果SRAG中有环路，但是处于此环路中的每类资源的个数不全为1，则系统不一定会发生死锁</li>
+</ul>
+</li>
+<li>银行家算法</li>
+</ul>
+</li>
+<li><p>死锁恢复</p>
+<pre><code>一旦检测到死锁，就需要采用某种策略将其从死锁状态中恢复出来，可以从剥夺资源和撤销进程两个方面来进行死锁恢复
+</code></pre><ul>
+<li>死锁恢复方法<ul>
+<li>取消所有的死锁进程</li>
+<li>让每个死锁进程回退到上述某些安全性检查的时间点之前，并重新启动所有进程</li>
+<li>连续取消死锁进程直到不再存在死锁为止</li>
+<li>连续抢占资源直到不再存在死锁为止  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>##第五章 内存管理</p>
+<p>###（1）存储层次结构<br><img src="1.png" alt="存储层次结构"></p>
+<ul>
+<li>内存：是计算机系统中一个重要组成部件，用于保存进程运行时程序和数据，其容量一般为数百兆字节到吉字节，且容量还在不断增加</li>
+<li>寄存器：具有极快的访问速度，能与CPU协调工作，但价格十分昂贵，因此容量不可能做得很大。寄存器一般以字为单位</li>
+<li>高速缓冲寄存器：是计算机存储体系结构中的一个重要组成部分，其容量远大于寄存器，但又比内存的小几十个数量级，其访问速度快于内存。根据程序执行的局部性原理，将主存中一些经常访问的信息存放在高速缓冲寄存器中，减少访问内存的次数，可大幅度提高程序的执行速度</li>
+<li>磁盘缓存：由于磁盘的I/O速度远低于主存的访问速度，因此将频繁使用的一部分磁盘数据和信息，暂存在磁盘缓存中，可减少访问磁盘的次数</li>
+</ul>
+<p>###（2）存储管理的目的和任务</p>
+<ul>
+<li>内存分配</li>
+<li>地址映射</li>
+<li>内存共享与保护</li>
+<li>内存扩充</li>
+</ul>
+<p>###（3）地址重定位<br>    一个逻辑地址空间的程序装入物理地址空间时，由于两个空间不一致，故需要进行地址变换，称为地址重定位</p>
+<ul>
+<li>常用重定位技术<ul>
+<li>静态重定位<ul>
+<li>静态重定位是程序执行之前由操作系统的重定位装入程序一次性地将该程序中的指令地址和数据地址全部转换成物理地址</li>
+</ul>
+</li>
+<li>动态重定位<ul>
+<li>动态重定位是在程序执行的过程中进行地址重定位，准确地说，是在每次访问内存单元之前，才将要访问的程序地址转换为内存地址</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>###（4）分区存储管理</p>
+<ul>
+<li>单一连续分区存储管理</li>
+<li>固定分区管理</li>
+<li>可变分区管理</li>
+<li>分区分配算法<ul>
+<li>首次适应算法<ul>
+<li>是指每次为作业分配存储空间时，总是顺序查找未分分区状态表，直至找到第一个能满足长度要求的空闲区为止。然后划分这个找到的未分分区，一部分分配给作业，另一部分仍作为空闲区。</li>
+</ul>
+</li>
+<li>最优适应算法<ul>
+<li>是指每次为作业分配内存时，总是从空闲区中挑选能满足作业要求的最小分区分配给作业的算法</li>
+</ul>
+</li>
+<li>最差适应算法<ul>
+<li>是指每次为作业分配内存时，总是挑选一个最大的未分分区分配给作业的算法</li>
+</ul>
+</li>
+<li>循环首次适应算法<ul>
+<li>当为进分配内存空间时，不再是每次都从表首开始查找，而是从上次找到的空闲区的下一个空闲区开始查找，直到找到一个能满足要求的空闲区为止，，从中划出一块与请求大小相等的内存空间分配给作业</li>
+</ul>
+</li>
+<li>快速适应算法<ul>
+<li>又称为分类搜索算法，是将空闲区根据其容量大小进行分类。对于每一类具有相同容量的所有空闲区，单独设立一个空闲区链表</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>###（5）页式存储管理</p>
+<ul>
+<li><p>原理</p>
+<p>  页式存储管理是将内存分成大小固定的若干块，一般每一块的大小为1KB、2KB或4KB，每个这样的内存块称为页或物理块。内存被等分成块后地址按物理块0,1,2,…，n编号，这些编号称为块号。同样把内个用户的地址空间划分为相同大小的页面，每个页面对应一个编号，称为页号。 </p>
+<ul>
+<li>逻辑地址<ul>
+<li>用户访问内存的地址形式应理解为有页号和页内地址两部分组成</li>
+</ul>
+</li>
+<li>页表<ul>
+<li>页号：进程各页的序号</li>
+<li>物理块号：进程各页对应存放在内存中的物理块号</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>地址变换过程</p>
+<p>  <code>物理地址=物理块号*页面大小+页内地址</code> </p>
+</li>
+<li><strong>快表</strong><ul>
+<li>为了提高地址变换速度，在地址变换机构中增设一个具有查询能力的特殊高速缓冲寄存器</li>
+</ul>
+</li>
+</ul>
+<p>###（6）段式存储管理</p>
+<ul>
+<li>原理<ul>
+<li>分段<ul>
+<li>作业的地址空间被划分成若干段，每个段定义了一组相对完整的逻辑信息，每个段都有用户在编程时决定的名字，并且这些段的大小各不相同。系统根据每个段的大小按照动态分区式存储管理方式为其分配一个连续的空闲区，同一作业所包含的各段之间不要求连续存放在内存空间当中。</li>
+</ul>
+</li>
+<li>段表<ul>
+<li>段号：进程中各段的序号</li>
+<li>段长：进程中各段的长度，用于检查段内地址是否越界</li>
+<li>段的起始地址：进程中各段存放在内存中的起始地址</li>
+</ul>
+</li>
+<li>地址变换机构</li>
+</ul>
+</li>
+<li><p><strong>分页和分段的主要区别★</strong></p>
+<p>  分页系统和分段系统有许多相似之处。比如两者都采用离散分配方式，且都要通过地址映射机构来实现地址变换。但在概念上两者完全不同，主要表现在下述四个方面。</p>
+<ul>
+<li><p>页是信息的物理单位，与源程序的逻辑结构无关，且对用户不可见。分页的目的是提高内存的利用率，减少内存中的外部碎片。段则是信息的逻辑单位，由源程序的逻辑结构所决定，它有一组意义相对完整的信息，对用户是可见的。分段是为了能更好地满足用户的需求。</p>
+</li>
+<li><p>页的大小固定且由系统决定，系统自动把逻辑地址划分为页号和页内地址两部分，这是由机器硬件实现的，且页面只能以页面大小的整数倍地址开始。而段的长度却不固定，可以根据用户需要来划定，通常由编译程序在对源程序进行编译时，根据信息的性质来划分。段起始地址可以从任意主存地址开始。</p>
+</li>
+<li><p>分页的作业空间是一维的，即单一的线性地址空间，程序员只需要利用一个逻辑地址就可以表示一个地址。分段的作业空间则是二维的，程序员在标识一个地址时，需要给出两个信息：段名和段内地址。在段式存储管理方式中，源程序经连接装配后仍保持二维结构。</p>
+</li>
+<li><p>通常分段的段内空间会比分页的空间大，因此段表会比页表短。对段表查询所需的时间也就会比对页表查询时间少，这使得段氏存储管理方式能够提高内存的访问效率。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>###（7）段页式存储管理<br>    页式和段式存储管理方式都有各自的优缺点，分页系统能有效地提高内存的利用率，而分段系统能很好地满足用户需求。</p>
+<ul>
+<li>原理<ul>
+<li>段页式系统的基本原理是分段和分页相结合，首先将用户程序分为若干个段，然后再将每个段划分成固定大小的若干页，并为每个段赋予一个段名。</li>
+</ul>
+</li>
+</ul>
+<p>###（8）虚拟存储管理</p>
+<ul>
+<li>基本原理<ul>
+<li>理论基础：局部性原理<ul>
+<li>时间局限性</li>
+<li>空间局限性</li>
+</ul>
+</li>
+<li><strong>虚拟存储器</strong><ul>
+<li>是指仅把作业的一部分装入内存便可运行的存储器系统，是具有请求调入功能和置换功能，能从逻辑上对内存进行扩充的一种存储器系统。</li>
+<li>特征：多次性、对换性、虚拟性 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>页面置换算法</strong>★<ul>
+<li>最佳置换算法（OPT）<ul>
+<li>从内存中选择今后不再访问的页面或者在最长一段时间以后才需要访问的页面予以淘汰</li>
+</ul>
+</li>
+<li><strong>先进先出置换算法（FIFO）</strong><ul>
+<li>淘汰最先进入内存的页面，即选择在内存中驻留时间最长的页面予以淘汰 </li>
+</ul>
+</li>
+<li><strong>最近最久未使用算法（LRU）</strong><ul>
+<li>把过去最长一段时间里不曾被使用过的页面置换掉。实质是，当需要置换一页时，选择在最近一段时间里最久没有使用过的页面予以置换  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>##第六章 设备管理</p>
+<p>###（1）设配管理的目标</p>
+<ul>
+<li>主要是提高I/O设备的利用率，提供一个便利、统一的管理模式，用于满足用户提出的各种I/O需求<br>###（2）设备管理的任务</li>
+<li>状态追踪</li>
+<li>设备分配</li>
+<li>设备的控制</li>
+<li>提高处理器和I/O设备的利用率</li>
+<li>共享</li>
+<li>差错处理<br>###（3）I/O设备分类<br>####按使用特性分类</li>
+<li>存储设备：磁盘、磁带</li>
+<li>I/O设备：输入输出设备、交互式设备<br>####按数据组织分类</li>
+<li>块设备：以数据块的形式组织和传送数据的设备</li>
+<li>字符设备：以单个字符的形式组织和传递数据的设备<br>####按资源分配分类</li>
+<li>独占设备</li>
+<li>共享设备</li>
+<li>虚拟设备<br>####按数据传输率分类</li>
+<li>低速设备</li>
+<li>中速设备</li>
+<li>高速设备<br>####按从属关系分类</li>
+<li>系统设备</li>
+<li>用户设备<br>###（4）I/O系统控制方式★</li>
+<li>程序直接控制方式</li>
+<li>中断控制方式</li>
+<li>DMA控制方式</li>
+<li>通道控制方式<br>###（5）I/O软件设计目标</li>
+<li>设备无关性</li>
+<li>统一命名</li>
+<li>出错处理</li>
+<li>独占性设备和共享性设备</li>
+<li>缓冲技术</li>
+<li>I/O控制方式<br>###（6）设备无关软件</li>
+<li>设备无关性<ul>
+<li>也称为设备独立性，基本含义是：应用程序独立于具体使用的物理设备<br>###（7）用户层软件<br>####库函数<br>####假脱机系统</li>
+</ul>
+</li>
+<li>基本思想<ul>
+<li>输入数据时，利用专门的外围控制器先将低速I/O设备上的数据传送到高速磁盘上，然后处理器直接从磁盘中读取数据；输出数据时，处理器把数据块快速地输出到磁盘上，然后数据从磁盘传送到低速输出设备上</li>
+</ul>
+</li>
+<li><p><strong>SPOOLing技术</strong></p>
+<p>  是对脱机输入和脱机输出技术的模拟，它建立在多道程序设计的基础之上，同时需要有高速随机外存的支持</p>
+<ul>
+<li>组成<ul>
+<li>输入井和输出井：在磁盘开辟存储空间，收容输入、输出数据。 </li>
+<li>输入缓冲区和输出缓冲区：在内存设置缓冲，暂存从设备输入或从输入井输入的数据</li>
+<li>输入进程和输出进程</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>采用SPOOLing技术将独占设备改造成共享设备；</li>
+<li>在很大程度上提高了I/O速度；</li>
+<li>实现了虚拟设备功能；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>###（8）通道</p>
+<ul>
+<li>类型<ul>
+<li>字节多路通道</li>
+<li>数组选择通道</li>
+<li>数组多路通道</li>
+</ul>
+</li>
+</ul>
+<p>###（9）磁盘调度</p>
+<ul>
+<li>先来先到服务调度算法</li>
+<li>最短寻道时间优先调度算法</li>
+<li>扫描调度算法</li>
+<li>循环扫描调度算法</li>
+</ul>
+<p>##第七章 文件管理</p>
+<p>###（1）文件</p>
+<p>####数据项</p>
+<ul>
+<li>数据项是最低级的数据组织形式，分为基本数据项和组合数据项<ul>
+<li>基本数据项<ul>
+<li>用于描述一个对象的某种属性的字符集，是数据组织中可以命名的最小逻辑单位</li>
+</ul>
+</li>
+<li>组合数据项<ul>
+<li>由若干个基本数据项组成，简称组项<br>####记录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>记录是能被某些应用程序处理的一组相关数据项的集合，用于描述一个对象在某方面的属性<br>####文件</li>
+<li>文件是具有文件名的一组相关元素的集合，可分为有结构文件和无结构文件<ul>
+<li>有结构文件由若干个相关的记录组成</li>
+<li>无结构文件则看成是一个字符流</li>
+</ul>
+</li>
+</ul>
+<p>###（2）文件系统</p>
+<p>####模型</p>
+<ul>
+<li>模型分为三个层次，最底层是对象及其属性；中间层是对对象进行操纵和管理的软件集合；最高层是文件系统提供给用户的接口</li>
+</ul>
+<p>###（3）文件结构</p>
+<p>####逻辑结构</p>
+<ul>
+<li>无结构的字符流式文件</li>
+<li>有结构的记录式文件<br>####物理结构<br>  文件的物理结构又称存储结构，是指文件在存储器上的存储组织形式。文件采用怎样的物理结构与存储介质的存储特性有关</li>
+<li>顺序结构</li>
+<li>链接结构</li>
+<li>索引结构</li>
+</ul>
+<p>###（4）文件目录</p>
+<ul>
+<li>主要目标<ul>
+<li>实现“按名存取”</li>
+<li>提高对目录的检索速度</li>
+<li>实现文件共享</li>
+<li>允许文件重名</li>
+</ul>
+</li>
+</ul>
+<p>###（5）文件共享</p>
+<ul>
+<li>利用符号链方式实现文件共享</li>
+<li>基于索引节点的共享方式</li>
+</ul>
+<p>###（6）文件安全</p>
+<ul>
+<li>存取控制矩阵</li>
+<li>存取控制表</li>
+<li>用户权限表</li>
+<li>口令方法</li>
+<li>文件加密</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/03/线性表知识点/" rel="next" title="线性表">
+                <i class="fa fa-chevron-left"></i> 线性表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/daxiao.jpg"
+                alt="JeffLiu" />
+            
+              <p class="site-author-name" itemprop="name">JeffLiu</p>
+              <p class="site-description motion-element" itemprop="description">To be good at everything</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/likekickdoor" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                    
+                      <i class="fa fa-fw fa-google"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JeffLiu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
