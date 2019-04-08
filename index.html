@@ -345,36 +345,22 @@
       
         
           
-            <h4 id="网络层知识"><a href="#网络层知识" class="headerlink" title="网络层知识"></a>网络层知识</h4><blockquote>
-<p>网络层只把分组发送到目的<strong>主机</strong>，但是真正通信的并不是主机而是<strong>主机中的进程</strong>。<strong>传输层提供了进程间的逻辑通信</strong>，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。</p>
-</blockquote>
-<h5 id="UDP-amp-TCP的特点："><a href="#UDP-amp-TCP的特点：" class="headerlink" title="UDP&amp;TCP的特点："></a>UDP&amp;TCP的特点：</h5><ol>
-<li><p>用户数据报协议UDP：</p>
-<ul>
-<li>无连接的</li>
-<li>尽最大可能交付的</li>
-<li>没用拥塞控制</li>
-<li>面向报文：对于应用程序传下来的报文不合并也不拆分，只添加UDP首部</li>
-<li>支持一对一、一对多、多对多</li>
-<li>应用：视频直播、DNS等，要求速度快而不需可靠</li>
-</ul>
-</li>
-<li><p>传输控制协议TCP：</p>
-<ul>
-<li>面向连接的</li>
-<li>提供可靠交付</li>
-<li>有流量控制，拥塞控制</li>
-<li>全双工通信</li>
-<li>面向字节流：把应用传下来的报文看成字节流，把字节流组织成大小不等的数据块</li>
-<li>每一条TCP连接只能一对一</li>
-<li>应用：邮件传输、文件传输等，要求可靠。</li>
-</ul>
-</li>
-</ol>
-<h5 id="TCP三报文握手"><a href="#TCP三报文握手" class="headerlink" title="TCP三报文握手"></a>TCP三报文握手</h5><p><img src="/uploads/network/treehandshake.png" alt="握手"></p>
-<h5 id="TCP四报文挥手"><a href="#TCP四报文挥手" class="headerlink" title="TCP四报文挥手"></a>TCP四报文挥手</h5><p><img src="/uploads/network/fourhandshake.jpg" alt="挥手"></p>
+          网络层知识
+网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。
 
-          
+UDP&amp;TCP的特点：
+用户数据报协议UDP：
+
+无连接的
+尽
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/08/网络层总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -514,44 +500,30 @@
       
         
           
-            <h4 id="计算机网络问题"><a href="#计算机网络问题" class="headerlink" title="计算机网络问题"></a>计算机网络问题</h4><blockquote>
-<p>问题：<br>    当打开浏览器时，在输入栏输入www.Google.com后，都发生了什么事情？  </p>
-</blockquote>
-<h4 id="回答"><a href="#回答" class="headerlink" title="回答"></a>回答</h4><ul>
-<li>参考图解：<br><img src="https://mmbiz.qpic.cn/mmbiz_png/12mPmHVcSumplAiaC2NW3oNc1KawG3jXPes8jYjqZ8cXyJHTBmia94ic7uCFWPEEacPAdibIY6EwAxwh92opa7q8Vg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图解"></li>
-<li><a href="https://www.oschina.net/translate/what-happens-when-you-type-googlecom?comments&amp;p=2" target="_blank" rel="external">了解详情</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651555392&amp;idx=1&amp;sn=9042c990f82fe5d03f03e6af7536b4c3&amp;chksm=80255181b752d897524a6f1ee332f245761c89a5e01d0cbf0499e3a74a21f3865f8cfff823cf&amp;mpshare=1&amp;scene=1&amp;srcid=1125ecOUDnM5i0dhstkG6eyd&amp;pass_ticket=byNbhf3smWXq8FGyJxzCfHcRBNH4ztcG%2Fq8NdYLN6QLm6WnpixhgNnTCZyE4aY%2F9#rd" target="_blank" rel="external">了解详情</a></li>
-<li><a href="https://www.jianshu.com/p/40d76ebb94e2" target="_blank" rel="external">了解详情</a></li>
-<li><a href="https://www.jianshu.com/p/23b388f8e5aa" target="_blank" rel="external">了解详情</a></li>
-</ul>
-<hr>
-<ul>
-<li>文字描述：</li>
-</ul>
-<ol>
-<li>一般情况下，一旦它决定其必定是一个url时，它会检查输入是否有协议头，如果没有，它会在其开头添加”<a href="http://&quot;，按照默认的值，如端口80、GET方法和无基本身份认证，执行程序。" target="_blank" rel="external">http://&quot;，按照默认的值，如端口80、GET方法和无基本身份认证，执行程序。</a></li>
-<li>然后建立一个http请求并发送请求。<ul>
-<li>浏览器会先查询本地DNS，如果有缓存就直接按照DSN返回的IP地址和端口进行连接。</li>
-<li>如果没有，DNS将应答一系列IP地址列表。浏览器会选择一个进行连接。</li>
-</ul>
-</li>
-<li>http请求从一个节点转跳到另一个节点，直到它找到Google.com负载均衡器的IP地址。</li>
-<li>Google服务器响应浏览器，需要使用https。假定响应报文是301永久定向，将原路返回浏览器。</li>
-<li>浏览器改用https 默认443端口，重新发送请求，这次，TLS握手在负载均衡服务器和浏览器之间进行。之后他们会使用TLS加密发送。</li>
-<li>Google的响应头将由浏览器读取，根据响应头的缓存协议进行缓存。并将内容如html、css、js等渲染到界面上显示给用户。</li>
-</ol>
-<ul>
-<li>总结：<ul>
-<li>域名解析（获得IP地址）</li>
-<li>向Web服务器发送HTTP请求</li>
-<li>服务器处理请求</li>
-<li>服务器返回HTTP响应</li>
-<li>浏览器显示页面信息</li>
-</ul>
-</li>
-</ul>
+          计算机网络问题
+问题：    当打开浏览器时，在输入栏输入www.Google.com后，都发生了什么事情？  
 
-          
+回答
+参考图解：
+了解详情
+了解详情
+了解详情
+了解详情
+
+
+
+文字描述：
+
+
+一般情况下，一旦它决定其必定是一个url时，它会检查输入是否有协议头，如果没有，它会在其开头添加”htt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/07/计算机网络问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -691,656 +663,21 @@
       
         
           
-            <center>操作系统复习资料(2018)</center>
+          操作系统复习资料(2018)
 
-<p>##第一章 操作系统概述</p>
-<p>###1.操作系统的基本概念<br>    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。</p>
-<p>###2.操作系统的主要目标</p>
-<ul>
-<li><strong>高效性：操作系统允许以更高效的方式使用计算机系统资源</strong></li>
-<li><strong>方便性：操作系统使得用户使用计算机更加方便</strong></li>
-<li>可扩充性</li>
-<li>开放性<br>###3.操作系统的作用</li>
-<li>用户与计算机系统之间的接口</li>
-<li>计算机系统资源的管理者</li>
-<li>实现对计算机资源的抽象<br>###4.操作性系统的基本特征★</li>
-<li><strong>并发性</strong></li>
-<li><strong>共享性</strong></li>
-<li>虚拟性</li>
-<li>异步性</li>
-</ul>
-<p>###5.操作系统的主要功能★<br>|分类|具体工作|<br>|-|-|<br>|处理机管理|进程控制、进程同步、进程通信、进程调度|<br>|存储管理|内存分配、内存保护、地址映射、内存扩充|<br>|设备管理|缓冲区管理、设备分配、设备处理、虚拟设备管理|<br>|文件管理|文件存储空间管理、目录管理、文件读/写管理、文件保护、文件系统的安全性|<br>|用户接口|命令接口、程序接口、图形接口|</p>
-<p>##第二章 中断</p>
-<p>###1.中断的概念</p>
-<ul>
-<li>指CPU在执行一个程序时，对系统发生的某个事件(程序自身或外界的原因引起的)作出的一种反应，即CPU暂停正在执行的程序，保留当前程序的运行现场后自动转去处理相应的事件，处理完该事件后，又返回到之前的程序断点，继续执行被中断的程序。<br>###2.中断的特点</li>
-<li>随机性</li>
-<li>可恢复性</li>
-<li>自动性<br>###3.中断的作用</li>
-<li>实现CPU与I/O设备并行工作</li>
-<li>实现硬件故障处理</li>
-<li>实现人-机通信</li>
-<li>实现多道程序和分时操作</li>
-<li>实现实时处理</li>
-<li>实现应用程序和操作系统的联系</li>
-<li>实现多处理机系统中处理机之间的联系</li>
-</ul>
-<p>###<strong>4.中断的类型</strong></p>
-<ul>
-<li>按中断功能分类<ul>
-<li>硬件故障中断</li>
-<li>程序性中断</li>
-<li>外部中断</li>
-<li>I/O中断</li>
-<li>访管中断</li>
-</ul>
-</li>
-<li>按中断方式分类<ul>
-<li>强迫性中断</li>
-<li>自愿中断</li>
-</ul>
-</li>
-<li>按中断来源分类<ul>
-<li>外中断</li>
-<li>内中断</li>
-</ul>
-</li>
-</ul>
-<p>##第三章 进程和线程</p>
-<p>###1.程序的顺序执行</p>
-<p>####（1）概念</p>
-<ul>
-<li>通常可以把一个应用程序分为若干个程序段，各程序之间必须按照某种先后次序顺序执行，仅在前一程序段执行完成后，才能执行后续程序段。</li>
-</ul>
-<p>####（2）特征</p>
-<ul>
-<li>顺序性：程序的各个操作严格按照顺序执行</li>
-<li>封闭性：程序执行中独占全机，不受外界环境影响</li>
-<li>可再现性：只要程序执行时的环境和初始条件相同，当程序重复执行时，不论它的执行方式如何，其结果都是相同的</li>
-</ul>
-<p>###2.程序的并发执行</p>
-<p>####（1）特征</p>
-<ul>
-<li>间断性：程序间具有相互制约关系，所以程序的执行过程中具有暂停因素</li>
-<li>失去封闭性：由于多个程序共享资源，某程序的执行必然会受其他程序的影响</li>
-<li>不可再现性：程序在并发执行时，失去了封闭性，这也将导致其失去执行的可再现性</li>
-</ul>
-<p>###3.进程</p>
-<p>####（1）定义</p>
-<ul>
-<li>进程是程序的一次执行</li>
-<li>进程是可以和别的计算并发执行的计算</li>
-<li>进程是定义在一个数据结构上，并能够在其上进行操作的一个程序</li>
-<li>进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位</li>
-</ul>
-<p>####（2）进程状态</p>
-<ul>
-<li>两状态模型<ul>
-<li>运行态</li>
-<li>非运行态</li>
-</ul>
-</li>
-<li><strong>五状态模型</strong><ul>
-<li>新建态：已经创建进程控制块，但还没有加载到内存中</li>
-<li>就绪态：已分配到除CPU以外的所有必要资源</li>
-<li>运行态：进程已获得所需资源并占用处理机</li>
-<li>阻塞态：进程在等待某个事情的发生而暂时不能运行</li>
-<li>终止态：进程或者因为执行结束，或者因为被撤销而从可执行进程组中退出</li>
-</ul>
-</li>
-</ul>
-<hr>
-<pre><code>新建态--&gt;就绪态：系统纳入一个新进程
-就绪态--&gt;运行态：进程被调度程序选中，占据处理机而进行运行状态
-运行态--&gt;终止态：进程运行结束或被撤销，则退出系统，进入终止态
-运行态--&gt;就绪态：进程分配的占据处理机的时间片已经用完，或者是具有更高优先级的进程进入系统，当前正在运行的进程被强占了处理机，此时进程转换为就绪态
-运行态--&gt;阻塞态：进程在运行过程中，等待系统分配资源或者等待某些事件发生时，进程让出处理机转换为阻塞态
-阻塞态--&gt;就绪态：处于阻塞队列中的进程等待的资源可用或者等待的事件发生之后，进程转换为就绪态，等待处理机的分配
-</code></pre><hr>
-<p>####（3）进程控制块(PCB)<br>    进程控制块是操作系统用于记录进程状态和相关信息，控制进程运行的数据结构，是进程的唯一标识符</p>
-<ul>
-<li>进程标识符</li>
-<li>进程状态</li>
-<li>调度信息</li>
-<li>程序计数器</li>
-<li>上下文数据</li>
-<li>I/O状态信息 </li>
-</ul>
-<p>###4.线程</p>
-<ul>
-<li>把调度和分派的基本单位称为线程或轻量级进程，而把资源分配的基本单位称为进程或任务</li>
-</ul>
-<p>####（1）主要特征</p>
-<ul>
-<li>并发性：同一进程的多个线程可在一个或者多个处理机上并发或并行地执行</li>
-<li>共享性：同一进程中的所有线程共享但不拥有进程的状态和资源，且驻留在进程的同一主存空间中，可以访问相同的数据</li>
-<li>动态性：线程是程序在相应数据集上的一次执行过程，由创建而产生，至撤销而消亡，其生命周期中经历各种状态的变化</li>
-<li>结构性：<strong>线程是操作系统中调度和分派的基本单位</strong>，因此，它具有唯一的标识符和线程控制块，包含调度所需的一切信息</li>
-</ul>
-<p>####（2）线程实现</p>
-<ul>
-<li>用户级线程</li>
-<li>内核级线程</li>
-<li>组合线程</li>
-</ul>
-<p>####（3）线程模型</p>
-<ul>
-<li>多对一模型</li>
-<li>一对一模型</li>
-<li>多对多模型</li>
-</ul>
-<p>###5.互斥和同步★</p>
-<p>####（1）并发原理</p>
-<pre><code>临界区：是一段程序代码，进程将在此代码中访问共享的资源，当另一个进程已经在该代码中运行时，该进程不能再这段代码中只执行
-竞争：多个进程在访问一个共享数据时，结果依赖于它们执行的相对时间
-同步：系统中有一些相互合作、协同工作的进程
-互斥：多个线程因争用临界区内的共享资源而互斥地执行，即当一个进程在临界区访问共享资源时，其他进程不能进入该临界区访问任何共享资源
-死锁：两个或两个以上的进程因其中的每个进程都在等待其他进程执行完毕而不能继续执行
-饥饿：是指一个可运行的进程虽然能就执行，但被调度程序无限期地忽视而不能执行的情况
-</code></pre><ul>
-<li>两种制约关系<ul>
-<li>直接相互制约关系—-进程同步</li>
-<li>间接相互制约关系—-进程互斥</li>
-</ul>
-</li>
-<li>临界资源和临界区<ul>
-<li>调度原则<ul>
-<li>空闲让进：当临界资源处于空闲状态，临界区没有进程进入时，允许一个请求进入临界区的进程立即进入自己的临界区</li>
-<li>忙则等待：当已有进程进入临界区时，临界资源正在被访问，因此其他试图进入临界区的进程必须等待，以保证临界资源的互斥访问</li>
-<li>有限等待：对于要求访问临界资源的进程，应保证其在有限的时间内能够进入自己的临界访问临界资源，以免产生“死等”现象</li>
-<li>让权等待：当进程不能进入自己的临界区访问临界资源时，应当立即释放处理机，以免让进程陷入“忙等”状态</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>####（2）信号量机制</p>
-<ul>
-<li>基本原理<ul>
-<li>两个或多个进程通过简单的信号进行合作，一个进程可以被迫在某一位置停止，直到接受到一个特定的信号为止 </li>
-</ul>
-</li>
-<li>整型信号量</li>
-<li>记录型信号量</li>
-<li>二元信号量</li>
-</ul>
-<p>####（3）经典同步问题</p>
-<ul>
-<li>生产者-消费者问题</li>
-<li>读者-写者问题</li>
-<li>哲学家就餐问题</li>
-</ul>
-<p>##第四章 调度与死锁</p>
-<p>###1.调度原则</p>
-<ul>
-<li>调度算法的选取会受到不同因素的影响，基本原则是要保证计算机的系统性能和让用户满意</li>
-</ul>
-<p>####（1）考虑因素</p>
-<ul>
-<li><p>周转时间</p>
-<ul>
-<li>周转时间是评价批处理系统的性能、选择作业调度方式与算法的重要准则之一。周转时间是指从作业提交给系统开始，到作业完成为止的这段时间间隔<blockquote>
-<p>周转时间=后备队列等待时间+就绪队列等待时间<em>+CPU执行时间</em>+等待I/O完成时间*</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>响应时间</p>
-<ul>
-<li>响应时间可以用于评价分时系统的性能，这是选择分时系统中进程调度算法的重要准则之一。响应时间是从用户通过键盘提交一个请求开始，直至系统首次产生响应为止的时间间隔<blockquote>
-<p>响应时间=请求信息传送到处理机的时间+处理机处理信息的时间+响应信息回送到终端的时间</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>截止时间</p>
-<ul>
-<li>这是评价实时系统性能的重要指标，是选择实时调度算法的重要准则。截止时间是指某任务必须开始执行的最迟时间，或必须完成的最迟时间</li>
-</ul>
-</li>
-<li>优先权<ul>
-<li>在批处理、分时和实时系统中选择调度算法时，都可以遵循优先权准则，以便让某些紧急作业得到及时处理</li>
-</ul>
-</li>
-<li>吞吐量<ul>
-<li>吞吐量是用于评价批处理系统性能的一个重要指标，是选择批处理作业调度的重要准则。吞吐量是指在单位时间内系统所完成的作业数，与批处理作业的平均长度密切相关。</li>
-</ul>
-</li>
-<li>处理机利用率<ul>
-<li>CPU价格十分昂贵，致使处理机的利用率称为衡量性能的十分重要的指标，而调度方式和算法对处理机的利用率起着十分重要的作用</li>
-</ul>
-</li>
-<li>公平性<ul>
-<li>除了要考虑CPU得到有效利用外，系统中的其他各类资源，如内存、外存和I/O设备等，也应该得到充分的利用</li>
-</ul>
-</li>
-</ul>
-<p>###2.调度算法</p>
-<p>####（1）先来先服务调度算法*</p>
-<ul>
-<li>按照作业/进程进入队列的先后顺序进行挑选，先进入的将先进行后续步骤的处理</li>
-</ul>
-<p>####（2）短作业优先调度算法</p>
-<ul>
-<li>以进入系统的作业要求的CPU运行时间的长短为挑选依据，优先选取预计所需服务时间最短的作业进行调度</li>
-</ul>
-<p>####（3）优先级调度算法*</p>
-<ul>
-<li>根据事先设定好的进程的优先级来选取就绪队列中优先级最高的进程投入运行的算法。<ul>
-<li>抢占式：在进程运行过程中，如果有优先级更高的进程到来，则当前进程所占用的处理机会被立即剥夺，并将处理机分配给优先级更高的进程，使之运行</li>
-<li>非抢占式：在进程运行过程中，如果有优先级更高的进程到来，则当前进程继续运行直到完成或出现需要等待的事件而放弃处理机时，才调度优先级更高的进程运行</li>
-</ul>
-</li>
-</ul>
-<p>####（4）时间片轮转调度算法*</p>
-<ul>
-<li>将所有的就绪进程按先来先到服务的原则排成一个队列，每次调度时，给进程分配处理机和时间片。当执行的时间片用完时，中断该进程，并将它送往就绪队列的末尾，然后在把处理机和时间片分给就绪队列中新的队首进程。</li>
-</ul>
-<p>####（5）最高响应比优先调度算法</p>
-<ul>
-<li>为每个作业引入一个称为响应比的动态优先级指标，并使作业的优先级随着等待时间的增加而以一定的速率提高，则长作业在等待一定的时间后，必然会随着优先级的提高而又机会分配到处理机。<blockquote>
-<p>响应比=周转时间/服务时间 =（等待时间+服务时间）/服务时间 = 1+等待时间/服务时间</p>
-</blockquote>
-</li>
-</ul>
-<p>###3.死锁*</p>
-<ul>
-<li>是指计算机中多个进程因资源竞争而造成的一种相持局面，如果没有外部的作用，这些进程就不能继续执行了</li>
-</ul>
-<p>####（1）资源</p>
-<ul>
-<li>可剥夺性资源<ul>
-<li>指某进程在获得这类资源后，可以再被其他进程或系统剥夺的资源，如处理机和内存</li>
-</ul>
-</li>
-<li>非剥夺性资源<ul>
-<li>系统在把不可剥夺性资源分配给某进程后，就再不能强行收回，只能由进程用完后自行释放，如磁带机、打印机等</li>
-</ul>
-</li>
-</ul>
-<p>####（2）产生原因和必要条件*</p>
-<ul>
-<li>产生原因<ul>
-<li>资源竞争  <ul>
-<li>当系统中多个进程同时需要使用某些资源，而这些临界资源又不能同时满足其需要时，便会引起进程对资源的竞争，从而导致死锁</li>
-</ul>
-</li>
-<li>进程推进顺序不当<ul>
-<li>进程在系统中允许并发执行，但进程本身的异步性决定了在其请求和释放资源时，如果时机选择不当就有可能导致进程死锁的发生</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>必要条件<ul>
-<li><strong>互斥</strong>：进程对分配到的资源必须独立使用，即在一段时间内一个资源只能由一个进程占用，不能共享</li>
-<li><strong>请求和保持</strong>：进程已经拥有了至少一个资源，但又提出来新的资源请求，而该资源又被其他进程占有，此时允许请求进程在不释放其已获得资源的情况下进入阻塞状态，等待分配新的资源</li>
-<li><strong>不可剥夺</strong>：进程所获得的资源在未使用完成之前，不能被其他进程强行夺走，只能在使用完成后由进程自身释放</li>
-<li><strong>循环等待</strong>：当发生死锁时，必然存在一个进程和进程之间相互等待资源的环形链，使得环形链中每个进程的资源需求都得不到满足</li>
-</ul>
-</li>
-</ul>
-<p>####（3）死锁预防<br>    死锁预防是试图设计一种系统来排除发生死锁的可能性。破会死锁产生的条件中的一项或多项，就能够预防死锁情况的发生</p>
-<ul>
-<li>破坏“请求和保持”条件<ul>
-<li>系统规定所用进程对资源的申请放在运行之前一次性进行，得到了所需的所有资源或方可运行 </li>
-</ul>
-</li>
-<li>破坏“不剥夺”条件<ul>
-<li>当一个已经保持了某资源的进程，再提出新的资源请求而不能立即满足时，必须释放它已经保持的所有资源，待以后需要再重新申请 </li>
-</ul>
-</li>
-<li>破坏“环路等待”条件<ul>
-<li>系统规定将所有的资源按类型分成不同等级进行排序，并赋予不同的等级号，且所有进程请求必须严格按照资源序号递增的次序提出</li>
-</ul>
-</li>
-</ul>
-<p>####（3）死锁避免*</p>
-<ul>
-<li><p><strong>银行家算法</strong>★  </p>
-<ul>
-<li>安全状态<ul>
-<li>是指系统能按某种程序顺序来为每个进程分配其所需资源，直至满足每个进程对资源的最大需求，使每个进程都可顺利地完成</li>
-</ul>
-</li>
-<li>算法数据结构<ul>
-<li>可利用资源向量Available</li>
-<li>最大需求矩阵Max</li>
-<li>分配矩阵Allocation</li>
-<li>需求矩阵Need</li>
-</ul>
-</li>
-<li><p>算法过程</p>
-<p>   设Request(i)是进程Pi的请求向量，如果Request(i)[j]=k，表示进程Pi需要K个R(j)类型的资源。当Pi发现资源请求后系统将进行下列步骤</p>
-<p>   (1)如果Request(i)[j] &lt;= Need[i,j],边转向步骤2),否则认为出错，因为它所请求的资源数已超过它所宣布的最大值。</p>
-<p>   (2)如果Request(i)[j] &lt;= Available[i,j]，便转向步骤3)，否则，表示尚无足够资源，Pi需等待。</p>
-<p>   (3)系统试探着把资源分配给进程Pi，并需要修改下面数据结构中的数值；</p>
-<p>   Available[j] = Available[j] - Request(i)[j];</p>
-<p>   Allocation[i,j] = Allocation[i,j] + Request(i)[j];</p>
-<p>   Need[i,j] = Need[i,j] - Request(i)[j];</p>
-</li>
-<li><p>安全性算法</p>
-<p>   (1).设置两个向量</p>
-<pre><code>①　工作向量:Work=Available(表示系统可提供给进程继续运行所需要的各类资源数目)  
-</code></pre><p>   ②　Finish:表示系统是否有足够资源分配给进程(True:有;False:没有).初始化为False  </p>
-<p>   (2). 若Finish[i]=False&amp;&amp;Need&lt;=Work,则执行3;否则执行4(i为资源类别)</p>
-<p>   (3). 进程P获得第i类资源,则顺利执行直至完成，并释放资源: Work=Work+Allocation; Finish[i]=true;转2  </p>
-<p>   (4). 若所有进程的Finish[i]=true,则表示系统安全;否则,不安全!</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>####（4）死锁检测和恢复</p>
-<ul>
-<li><p>死锁检测</p>
-<pre><code>当系统分配资源时，没有采取任何限制性措施，那么系统必须检测其内部是否会出现死锁的情况，并提供相应解除死锁的手段
-</code></pre><ul>
-<li>死锁定理<ul>
-<li>如果SRAG中无环路，则系统不会出现死锁</li>
-<li>如果SRAG中有环路，且处于此环路中的每类资源只有1个，则系统出现死锁</li>
-<li>如果SRAG中有环路，但是处于此环路中的每类资源的个数不全为1，则系统不一定会发生死锁</li>
-</ul>
-</li>
-<li>银行家算法</li>
-</ul>
-</li>
-<li><p>死锁恢复</p>
-<pre><code>一旦检测到死锁，就需要采用某种策略将其从死锁状态中恢复出来，可以从剥夺资源和撤销进程两个方面来进行死锁恢复
-</code></pre><ul>
-<li>死锁恢复方法<ul>
-<li>取消所有的死锁进程</li>
-<li>让每个死锁进程回退到上述某些安全性检查的时间点之前，并重新启动所有进程</li>
-<li>连续取消死锁进程直到不再存在死锁为止</li>
-<li>连续抢占资源直到不再存在死锁为止  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>##第五章 内存管理</p>
-<p>###（1）存储层次结构<br><img src="1.png" alt="存储层次结构"></p>
-<ul>
-<li>内存：是计算机系统中一个重要组成部件，用于保存进程运行时程序和数据，其容量一般为数百兆字节到吉字节，且容量还在不断增加</li>
-<li>寄存器：具有极快的访问速度，能与CPU协调工作，但价格十分昂贵，因此容量不可能做得很大。寄存器一般以字为单位</li>
-<li>高速缓冲寄存器：是计算机存储体系结构中的一个重要组成部分，其容量远大于寄存器，但又比内存的小几十个数量级，其访问速度快于内存。根据程序执行的局部性原理，将主存中一些经常访问的信息存放在高速缓冲寄存器中，减少访问内存的次数，可大幅度提高程序的执行速度</li>
-<li>磁盘缓存：由于磁盘的I/O速度远低于主存的访问速度，因此将频繁使用的一部分磁盘数据和信息，暂存在磁盘缓存中，可减少访问磁盘的次数</li>
-</ul>
-<p>###（2）存储管理的目的和任务</p>
-<ul>
-<li>内存分配</li>
-<li>地址映射</li>
-<li>内存共享与保护</li>
-<li>内存扩充</li>
-</ul>
-<p>###（3）地址重定位<br>    一个逻辑地址空间的程序装入物理地址空间时，由于两个空间不一致，故需要进行地址变换，称为地址重定位</p>
-<ul>
-<li>常用重定位技术<ul>
-<li>静态重定位<ul>
-<li>静态重定位是程序执行之前由操作系统的重定位装入程序一次性地将该程序中的指令地址和数据地址全部转换成物理地址</li>
-</ul>
-</li>
-<li>动态重定位<ul>
-<li>动态重定位是在程序执行的过程中进行地址重定位，准确地说，是在每次访问内存单元之前，才将要访问的程序地址转换为内存地址</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>###（4）分区存储管理</p>
-<ul>
-<li>单一连续分区存储管理</li>
-<li>固定分区管理</li>
-<li>可变分区管理</li>
-<li>分区分配算法<ul>
-<li>首次适应算法<ul>
-<li>是指每次为作业分配存储空间时，总是顺序查找未分分区状态表，直至找到第一个能满足长度要求的空闲区为止。然后划分这个找到的未分分区，一部分分配给作业，另一部分仍作为空闲区。</li>
-</ul>
-</li>
-<li>最优适应算法<ul>
-<li>是指每次为作业分配内存时，总是从空闲区中挑选能满足作业要求的最小分区分配给作业的算法</li>
-</ul>
-</li>
-<li>最差适应算法<ul>
-<li>是指每次为作业分配内存时，总是挑选一个最大的未分分区分配给作业的算法</li>
-</ul>
-</li>
-<li>循环首次适应算法<ul>
-<li>当为进分配内存空间时，不再是每次都从表首开始查找，而是从上次找到的空闲区的下一个空闲区开始查找，直到找到一个能满足要求的空闲区为止，，从中划出一块与请求大小相等的内存空间分配给作业</li>
-</ul>
-</li>
-<li>快速适应算法<ul>
-<li>又称为分类搜索算法，是将空闲区根据其容量大小进行分类。对于每一类具有相同容量的所有空闲区，单独设立一个空闲区链表</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>###（5）页式存储管理</p>
-<ul>
-<li><p>原理</p>
-<p>  页式存储管理是将内存分成大小固定的若干块，一般每一块的大小为1KB、2KB或4KB，每个这样的内存块称为页或物理块。内存被等分成块后地址按物理块0,1,2,…，n编号，这些编号称为块号。同样把内个用户的地址空间划分为相同大小的页面，每个页面对应一个编号，称为页号。 </p>
-<ul>
-<li>逻辑地址<ul>
-<li>用户访问内存的地址形式应理解为有页号和页内地址两部分组成</li>
-</ul>
-</li>
-<li>页表<ul>
-<li>页号：进程各页的序号</li>
-<li>物理块号：进程各页对应存放在内存中的物理块号</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>地址变换过程</p>
-<p>  <code>物理地址=物理块号*页面大小+页内地址</code> </p>
-</li>
-<li><strong>快表</strong><ul>
-<li>为了提高地址变换速度，在地址变换机构中增设一个具有查询能力的特殊高速缓冲寄存器</li>
-</ul>
-</li>
-</ul>
-<p>###（6）段式存储管理</p>
-<ul>
-<li>原理<ul>
-<li>分段<ul>
-<li>作业的地址空间被划分成若干段，每个段定义了一组相对完整的逻辑信息，每个段都有用户在编程时决定的名字，并且这些段的大小各不相同。系统根据每个段的大小按照动态分区式存储管理方式为其分配一个连续的空闲区，同一作业所包含的各段之间不要求连续存放在内存空间当中。</li>
-</ul>
-</li>
-<li>段表<ul>
-<li>段号：进程中各段的序号</li>
-<li>段长：进程中各段的长度，用于检查段内地址是否越界</li>
-<li>段的起始地址：进程中各段存放在内存中的起始地址</li>
-</ul>
-</li>
-<li>地址变换机构</li>
-</ul>
-</li>
-<li><p><strong>分页和分段的主要区别★</strong></p>
-<p>  分页系统和分段系统有许多相似之处。比如两者都采用离散分配方式，且都要通过地址映射机构来实现地址变换。但在概念上两者完全不同，主要表现在下述四个方面。</p>
-<ul>
-<li><p>页是信息的物理单位，与源程序的逻辑结构无关，且对用户不可见。分页的目的是提高内存的利用率，减少内存中的外部碎片。段则是信息的逻辑单位，由源程序的逻辑结构所决定，它有一组意义相对完整的信息，对用户是可见的。分段是为了能更好地满足用户的需求。</p>
-</li>
-<li><p>页的大小固定且由系统决定，系统自动把逻辑地址划分为页号和页内地址两部分，这是由机器硬件实现的，且页面只能以页面大小的整数倍地址开始。而段的长度却不固定，可以根据用户需要来划定，通常由编译程序在对源程序进行编译时，根据信息的性质来划分。段起始地址可以从任意主存地址开始。</p>
-</li>
-<li><p>分页的作业空间是一维的，即单一的线性地址空间，程序员只需要利用一个逻辑地址就可以表示一个地址。分段的作业空间则是二维的，程序员在标识一个地址时，需要给出两个信息：段名和段内地址。在段式存储管理方式中，源程序经连接装配后仍保持二维结构。</p>
-</li>
-<li><p>通常分段的段内空间会比分页的空间大，因此段表会比页表短。对段表查询所需的时间也就会比对页表查询时间少，这使得段氏存储管理方式能够提高内存的访问效率。</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>###（7）段页式存储管理<br>    页式和段式存储管理方式都有各自的优缺点，分页系统能有效地提高内存的利用率，而分段系统能很好地满足用户需求。</p>
-<ul>
-<li>原理<ul>
-<li>段页式系统的基本原理是分段和分页相结合，首先将用户程序分为若干个段，然后再将每个段划分成固定大小的若干页，并为每个段赋予一个段名。</li>
-</ul>
-</li>
-</ul>
-<p>###（8）虚拟存储管理</p>
-<ul>
-<li>基本原理<ul>
-<li>理论基础：局部性原理<ul>
-<li>时间局限性</li>
-<li>空间局限性</li>
-</ul>
-</li>
-<li><strong>虚拟存储器</strong><ul>
-<li>是指仅把作业的一部分装入内存便可运行的存储器系统，是具有请求调入功能和置换功能，能从逻辑上对内存进行扩充的一种存储器系统。</li>
-<li>特征：多次性、对换性、虚拟性 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>页面置换算法</strong>★<ul>
-<li>最佳置换算法（OPT）<ul>
-<li>从内存中选择今后不再访问的页面或者在最长一段时间以后才需要访问的页面予以淘汰</li>
-</ul>
-</li>
-<li><strong>先进先出置换算法（FIFO）</strong><ul>
-<li>淘汰最先进入内存的页面，即选择在内存中驻留时间最长的页面予以淘汰 </li>
-</ul>
-</li>
-<li><strong>最近最久未使用算法（LRU）</strong><ul>
-<li>把过去最长一段时间里不曾被使用过的页面置换掉。实质是，当需要置换一页时，选择在最近一段时间里最久没有使用过的页面予以置换  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>##第六章 设备管理</p>
-<p>###（1）设配管理的目标</p>
-<ul>
-<li>主要是提高I/O设备的利用率，提供一个便利、统一的管理模式，用于满足用户提出的各种I/O需求<br>###（2）设备管理的任务</li>
-<li>状态追踪</li>
-<li>设备分配</li>
-<li>设备的控制</li>
-<li>提高处理器和I/O设备的利用率</li>
-<li>共享</li>
-<li>差错处理<br>###（3）I/O设备分类<br>####按使用特性分类</li>
-<li>存储设备：磁盘、磁带</li>
-<li>I/O设备：输入输出设备、交互式设备<br>####按数据组织分类</li>
-<li>块设备：以数据块的形式组织和传送数据的设备</li>
-<li>字符设备：以单个字符的形式组织和传递数据的设备<br>####按资源分配分类</li>
-<li>独占设备</li>
-<li>共享设备</li>
-<li>虚拟设备<br>####按数据传输率分类</li>
-<li>低速设备</li>
-<li>中速设备</li>
-<li>高速设备<br>####按从属关系分类</li>
-<li>系统设备</li>
-<li>用户设备<br>###（4）I/O系统控制方式★</li>
-<li>程序直接控制方式</li>
-<li>中断控制方式</li>
-<li>DMA控制方式</li>
-<li>通道控制方式<br>###（5）I/O软件设计目标</li>
-<li>设备无关性</li>
-<li>统一命名</li>
-<li>出错处理</li>
-<li>独占性设备和共享性设备</li>
-<li>缓冲技术</li>
-<li>I/O控制方式<br>###（6）设备无关软件</li>
-<li>设备无关性<ul>
-<li>也称为设备独立性，基本含义是：应用程序独立于具体使用的物理设备<br>###（7）用户层软件<br>####库函数<br>####假脱机系统</li>
-</ul>
-</li>
-<li>基本思想<ul>
-<li>输入数据时，利用专门的外围控制器先将低速I/O设备上的数据传送到高速磁盘上，然后处理器直接从磁盘中读取数据；输出数据时，处理器把数据块快速地输出到磁盘上，然后数据从磁盘传送到低速输出设备上</li>
-</ul>
-</li>
-<li><p><strong>SPOOLing技术</strong></p>
-<p>  是对脱机输入和脱机输出技术的模拟，它建立在多道程序设计的基础之上，同时需要有高速随机外存的支持</p>
-<ul>
-<li>组成<ul>
-<li>输入井和输出井：在磁盘开辟存储空间，收容输入、输出数据。 </li>
-<li>输入缓冲区和输出缓冲区：在内存设置缓冲，暂存从设备输入或从输入井输入的数据</li>
-<li>输入进程和输出进程</li>
-</ul>
-</li>
-<li>特点<ul>
-<li>采用SPOOLing技术将独占设备改造成共享设备；</li>
-<li>在很大程度上提高了I/O速度；</li>
-<li>实现了虚拟设备功能；</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>###（8）通道</p>
-<ul>
-<li>类型<ul>
-<li>字节多路通道</li>
-<li>数组选择通道</li>
-<li>数组多路通道</li>
-</ul>
-</li>
-</ul>
-<p>###（9）磁盘调度</p>
-<ul>
-<li>先来先到服务调度算法</li>
-<li>最短寻道时间优先调度算法</li>
-<li>扫描调度算法</li>
-<li>循环扫描调度算法</li>
-</ul>
-<p>##第七章 文件管理</p>
-<p>###（1）文件</p>
-<p>####数据项</p>
-<ul>
-<li>数据项是最低级的数据组织形式，分为基本数据项和组合数据项<ul>
-<li>基本数据项<ul>
-<li>用于描述一个对象的某种属性的字符集，是数据组织中可以命名的最小逻辑单位</li>
-</ul>
-</li>
-<li>组合数据项<ul>
-<li>由若干个基本数据项组成，简称组项<br>####记录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>记录是能被某些应用程序处理的一组相关数据项的集合，用于描述一个对象在某方面的属性<br>####文件</li>
-<li>文件是具有文件名的一组相关元素的集合，可分为有结构文件和无结构文件<ul>
-<li>有结构文件由若干个相关的记录组成</li>
-<li>无结构文件则看成是一个字符流</li>
-</ul>
-</li>
-</ul>
-<p>###（2）文件系统</p>
-<p>####模型</p>
-<ul>
-<li>模型分为三个层次，最底层是对象及其属性；中间层是对对象进行操纵和管理的软件集合；最高层是文件系统提供给用户的接口</li>
-</ul>
-<p>###（3）文件结构</p>
-<p>####逻辑结构</p>
-<ul>
-<li>无结构的字符流式文件</li>
-<li>有结构的记录式文件<br>####物理结构<br>  文件的物理结构又称存储结构，是指文件在存储器上的存储组织形式。文件采用怎样的物理结构与存储介质的存储特性有关</li>
-<li>顺序结构</li>
-<li>链接结构</li>
-<li>索引结构</li>
-</ul>
-<p>###（4）文件目录</p>
-<ul>
-<li>主要目标<ul>
-<li>实现“按名存取”</li>
-<li>提高对目录的检索速度</li>
-<li>实现文件共享</li>
-<li>允许文件重名</li>
-</ul>
-</li>
-</ul>
-<p>###（5）文件共享</p>
-<ul>
-<li>利用符号链方式实现文件共享</li>
-<li>基于索引节点的共享方式</li>
-</ul>
-<p>###（6）文件安全</p>
-<ul>
-<li>存取控制矩阵</li>
-<li>存取控制表</li>
-<li>用户权限表</li>
-<li>口令方法</li>
-<li>文件加密</li>
-</ul>
+##第一章 操作系统概述
+###1.操作系统的基本概念    操作系统（Operating System, 简称 OS）,是一组控制和管理计算机硬件与软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。
+###2.操作系统的主要目标
 
-          
+高效性：操作系统允许以
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/15/操作系统复习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1480,102 +817,17 @@
       
         
           
-            <h1 id="数据结构要点"><a href="#数据结构要点" class="headerlink" title="数据结构要点"></a>数据结构要点</h1><h3 id="第二章-线性表"><a href="#第二章-线性表" class="headerlink" title="第二章 线性表"></a>第二章 线性表</h3><hr>
-<h4 id="1-1-线性表基本概念"><a href="#1-1-线性表基本概念" class="headerlink" title="1.1 线性表基本概念"></a>1.1 线性表基本概念</h4><ol>
-<li><strong>线性表的定义</strong>：是最基本、应用最为广泛的一种数据结构。由n（n&gt;=0）个具有相同类型的数据元素a1,a2,a3,..,an组成的有限序列。这些数据元素可称为结点或记录或表目，把非空的线性表（n&gt;0）记为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">L = (a1,a2,a3,...,an)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>L是线性表的表名。一个线性表使用一个标识符来命名。</li>
-<li>n 称为线性表的长度，即线性表中数据元素的个数。当n=0时，称线性表为空表，表中不包含任何数据元素，当n&gt;0时，称其为非空线性表。（即线性表的下标从1开始）</li>
-<li>ai（1&lt;=i&lt;=n）是线性表中的数据元素。==每个数据元素具有相同的数据类型，其数据类型具体情况而定（数据元素的类型可以是高级语言所提供的简单类型或者用户自定义的任何类型）==<ul>
-<li>线性表中相邻数据元素之间存在==前后次序关系。==</li>
-<li>线性表中数据元素之间的逻辑关系就是各元素相互位置上的临接关系。==线性表中数据元素的相对位置是确定的，如果将一个线性表中数据元素的位置进行改动，则产生一个线性表。==</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li><p><strong>线性表的抽象数据类型</strong>：作为一个抽象数据类型，线性表由其<em>数据对象</em>、<em>数据元素间的关系</em>及其实施在其上的运算集三部分构成。下面给出线性表的抽象数据类型：<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">ADT List&#123;</div><div class="line">    数据对象：D=&#123;αi|αi∈ElemSet，i=1,2,3...,n,n&gt;=0&#125;</div><div class="line">    数据关系：R=&#123;&lt;αi-1,αi&gt;|αi-1,ai∈D,i=1,2,3...,n&#125;</div><div class="line">    基本操作：</div><div class="line">        LinearList* Init_List();</div><div class="line">            初始条件：线性表L不存在；</div><div class="line">            操作结果：构造一个空的线性表。</div><div class="line">        void Destory_List(LinearList* L );</div><div class="line">            初始条件：线性表L已经存在；</div><div class="line">            操作结果：销毁线性表L。</div><div class="line">        LinearList* Clear_List(LinearList* L ); </div><div class="line">            初始条件：线性表L已经存在；</div><div class="line">            操作结果：将线性表L置为空；</div><div class="line">        int List_Empty(LinearList* L);</div><div class="line">            初始条件：线性表L已经存在；</div><div class="line">            操作结果：若L为空表，则返回TRUE（或1）；否则返回FALSE（或0）。</div><div class="line">        int List_Length(LinearList* L);</div><div class="line">            初始条件：线性表已经存在；</div><div class="line">            操作条件：返回L中数据元素的个数。</div><div class="line">        elemtype GetData_List(LinearList* L,int i);</div><div class="line">            初始条件：线性表已经存在，且满足条件1&lt;=i&lt;=ListLength(L)；</div><div class="line">            操作条件：返回L中第i个元素。</div><div class="line">        int Search_List(LinearList* L,elemtype e,int compare());</div><div class="line">            初始条件：线性表L已经存在，compare()是数据元素的判定函数</div><div class="line">            操作结果：返回L中第一个与e满足compare()的数据元素的位序。若这样的数据元素不存在，则返回值为0。</div><div class="line">        void PriorElem(LinearList* L,elemtype cur_e,elemtype* pre_e);</div><div class="line">            初始条件：线性表已经存在；</div><div class="line">            操作结果：若cur_e是L的数据元素，而不是第一个数据元素，则用pre_e返回它的前驱，否则操作失败，pre_e无意义。</div><div class="line">        void NextElem(LinearList* L,elemtype cur_e,elemtype* next_e);</div><div class="line">            初始条件：线性表已经存在；</div><div class="line">            操作条件：若cur_e是L的数据元素，而不是最后一个数据元素，则用next_e返回它的后继；否则操作失败，next_e无意义。</div><div class="line">        LinearList* Insert_List(LinearList* L,int i,elemtype e);</div><div class="line">            初始条件：线性表已经存在，且 满足 1&lt;=i&lt;=ListLength(L)+1；</div><div class="line">            操作条件：在L中第i个位置之前插入新的数据元素e，L的长度加1。</div><div class="line">        LinearList* Delete_List(LinearList* L,int i,elemtye* e);</div><div class="line">            初始条件：线性表已经存在且非空，满足条件1&lt;=i&lt;=LinearLength(L)；</div><div class="line">            操作结果：删除L中的第i个数据元素，并用e返回其值，L的长度减1。</div><div class="line">        int TraverseList(LinearList* L,visit());</div><div class="line">            初始条件：线性表已经存在；</div><div class="line">            操作结果：依次对L的每个元素调用函数visit()，一旦visit()失败，则操作失败。</div><div class="line">&#125; ADT List;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>线性表的存储结构</strong>:<br><br>主要有两大类：</p>
-<ol>
-<li>定长的顺序存储结构，简称<em>顺序表</em>。（优点：随意访问，存储空间连续。缺点：定长，插入数据开销大。）</li>
-<li>变长的线性存储结构，亦称<em>链表</em>。（优点：任意插入数据元素，空间无限。缺点：存储开销大，从头访问时间开销大。）</li>
-</ol>
-</li>
-</ol>
-<h4 id="2-2-线性表的顺序存储结构–顺序表"><a href="#2-2-线性表的顺序存储结构–顺序表" class="headerlink" title="2.2 线性表的顺序存储结构–顺序表"></a>2.2 线性表的顺序存储结构–顺序表</h4><ol>
-<li><strong>顺序表的定义</strong>：线性表的顺序存储结构是指将线性表的所有数据元素，按照其逻辑顺序依次存储在一组连续的内存单元中，用这种存储形式存储的线性表称为<strong>顺序表</strong>（按顺序方式存储的线性表称为顺序表（sequence List），通过创建数组来建立）<br></li>
-</ol>
-<p>设每个数据元素占用d个存储单元，若第一个数据元素a1的存储地址为Loc(a1)，则第i个数据元素ai的地址Loc(ai)就可以通过下面的公式计算得到：<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Loc(αi) = Loc(α1) + (i-1)*d (1&lt;=i&lt;=d)</div><div class="line">//Loc(α1)是线性表中第一个元素的存储地址，称为线性表的存储首地址或基址</div></pre></td></tr></table></figure></p>
-<p><strong>以下是顺序存储结构示意图：</strong><br><img src="/uploads/datastruct/xianxingbiao/1.jpg" alt="image"><br><img src="/uploads/datastruct/xianxingbiao/2.jpg" alt="image"></p>
-<ol>
-<li><strong>顺序表的基本运算</strong>：</li>
-</ol>
-<ul>
-<li>插入运算示意<br>  <img src="/uploads/datastruct/xianxingbiao/3.jpg" alt="插入"></li>
-<li>删除运算示意<br>  <img src="/uploads/datastruct/xianxingbiao/4.jpg" alt="删除"></li>
-</ul>
-<ol>
-<li><strong>顺序表的优缺点</strong>：<ul>
-<li>优点：<ol>
-<li>结构简单，易于理解。</li>
-<li>方便顺序访问表中的每个元素</li>
-<li>不需要再为表示节点间的逻辑关系而增加额外的存储空间。</li>
-</ol>
-</li>
-<li>缺点：<ol>
-<li>顺序表的存储空间不易扩充。</li>
-<li>顺序表易造成存储空间利用率低。</li>
-<li>顺序表的插入和删除运算不方便。（需要移动很多元素）</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="2-2-线性表的链式存储结构–链表"><a href="#2-2-线性表的链式存储结构–链表" class="headerlink" title="2.2 线性表的链式存储结构–链表"></a>2.2 线性表的链式存储结构–链表</h4><ol>
-<li><strong>单链表的定义</strong>：链表是通过一组任意的存储单元来存储线性表中的数据元素，这些存储单元可以是连续的，也可以是不连续的。<ul>
-<li>按内存分配实现的方式：<ul>
-<li>动态链表；</li>
-<li>静态链表；</li>
-</ul>
-</li>
-<li>按链接方式：<ul>
-<li>单链表；</li>
-<li>循环链表；</li>
-<li>双链表等；（他们都属于动态链表）  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p>单链表节点结构，其中每个节点只有指向其直接后继的指针：<br><img src="/uploads/datastruct/xianxingbiao/5.png" alt="单链表节点结构"><br>单链表示意图：<br><img src="/uploads/datastruct/xianxingbiao/6.jpg" alt="无头结点的单链表示意图"></p>
-<ul>
-<li>箭头表示节点的指针域；</li>
-<li>符号∧（或NULL）表示最后一个节点的指针域，因为其不指向任何一个节点，故称其==空指针==；</li>
-<li>head 是指向单链表第一个节点的指针，称为头指针。<br>通常为方便实现链表的各种运算，在单链表的第一个节点之前附设一个类型相同的节点，该节点被称为头节点。（教材默认各种链表的运算基于带头结点的链表上进行实现的）  </li>
-</ul>
-<p>如下图：<br><img src="/uploads/datastruct/xianxingbiao/7.jpg" alt="含头结点的单链表示意图"></p>
-<ol>
-<li><strong>单链表的基本运算</strong>：单链表的建立：链表与顺序表不同，它是一种动态管理的存储结构。常用的方法：</li>
-</ol>
-<ul>
-<li>头插法建立单链表（由于头部插入数据，所以建立单链表的数据元素顺序和读入数据的顺序恰相反。）<br><img src="/uploads/datastruct/xianxingbiao/8.jpg" alt="image"><br><img src="/uploads/datastruct/xianxingbiao/9.jpg" alt="image"></li>
-<li>尾插法建立链表（每次都把新结点插入到链表的尾结点之后）<br><img src="/uploads/datastruct/xianxingbiao/10.jpg" alt="image"></li>
-</ul>
-<ol>
-<li><strong>静态链表</strong>：用数组来存放元素的值和地址。由于数组元素的个数一旦确定就不会改变，因此这种链表为静态链表。（许多情况下，事先难以估计线性表中元素的个数。因此，静态链表应用并不广泛）</li>
-<li><strong>循环链表</strong>：一般地，链表的最后一个结点的指针域是空指针，如果将其指向头指针，则使得链表头尾相连，构成循环链表。<ul>
-<li>循环链表的优点是：从表中任何一个结点开始都可以遍历整个链表，而对于单链表只能从头结点开始才能遍历链表中的所有结点。</li>
-<li>在循环链表中，则以结点的指针域是否为表头结点或操作起始结点作为判断终止遍历的条件。</li>
-<li>在建立带头结点的单循环链表中，只需要将尾结点的指针域置空修改为指向头指针即可。  </li>
-</ul>
-</li>
-</ol>
-<p>循环链表示意图：<br><img src="/uploads/datastruct/xianxingbiao/11.png" alt="image"></p>
-
-          
+          数据结构要点第二章 线性表
+1.1 线性表基本概念
+线性表的定义：是最基本、应用最为广泛的一种数据结构。由n（n&gt;=0）个具有相同类型的数据元素a1,a2,a3,..,an组成的有限序列。这些数据元素可称为结点或记录或表目，把非空的线性表（n&gt;0）记为:1L = (a1,a2,a3,..
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/03/线性表知识点/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1715,83 +967,20 @@
       
         
           
-            <h1 id="数据结构要点笔记"><a href="#数据结构要点笔记" class="headerlink" title="数据结构要点笔记"></a>数据结构要点笔记</h1><h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><h4 id="1-1-研究对象"><a href="#1-1-研究对象" class="headerlink" title="1.1 研究对象"></a>1.1 研究对象</h4><ol>
-<li><strong>数据结构</strong>：就是一门研究非数值计算的程序设计问题中计算机的操作对象，以及他们之间的关系和操作等的学科。</li>
-</ol>
-<h4 id="1-2-基本概念和术语"><a href="#1-2-基本概念和术语" class="headerlink" title="1.2 基本概念和术语"></a>1.2 基本概念和术语</h4><ol>
-<li><strong>数据</strong>：即信息的载体，是对客观事物的符号表示，指能输入到计算机中能被程序处理的符号的总称。如：字符、整数、声音、图形等。</li>
-<li><strong>数据元素</strong>：数据元素是数据的基本单元，它在计算机处理和程序设计中通常被设计为一个整体进行考虑和处理。</li>
-<li><strong>数据项</strong>：是数据的不可分割的最小单位。一个数据元素由若干个数据项组成。</li>
-<li><strong>数据对象</strong>：是具有相同特征的数据构成，是数据的一个子集。</li>
-<li><p><strong>数据结构</strong>：是相互之间存在一种或多种特定关系的数据元素的集合。==元素之间的关系为结构==，形式定义为一个二元组.<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Data_Structure(D,S)//其中D表示数据元素的有限集，S表示D上关系的有限集</div></pre></td></tr></table></figure>
-</li>
-<li><p>数据之<strong>逻辑结构</strong>：是==指数据结构中==数据元素之间的逻辑关系。是从具体问题中抽象出来的数据模型，独立于计算机存储器.<br></p>
-</li>
-</ol>
-<ul>
-<li>==集合==：结构中的数据元素之间除了“同属一个集合”的关系外，别无其他关系。</li>
-<li>==线性结构==：结构中数据元素之间存在一对一的关系。</li>
-<li>==树形结构==：结构中的元素之间存在一对多的关系。</li>
-<li>==图装结构或网状结构==：结构中的数据元素之间存在多对多的关系。<br><img src="/uploads/datastruct/xulun/set.png" alt="集合"><br><img src="/uploads/datastruct/xulun/line.png" alt="线性结构"><br><img src="/uploads/datastruct/xulun/tree.png" alt="树状结构"><br><img src="/uploads/datastruct/xulun/graph.png" alt="图状结构"></li>
-</ul>
-<ol>
-<li>数据之<strong>存储结构</strong>：==是<em>数据的逻辑结构</em>在计算机中内存中的存储方式==，又称为物理结构。分为四种种，顺序存储结构、链式存储结构、索引结构、散列结构。<br></li>
-</ol>
-<ul>
-<li>顺序存储方式：存储器中相邻位置来表示数据元素之间的逻辑顺序。把逻辑上相邻的元素存储在物理相邻的存储单位中。一段连续的内存空间。<br><br>优点：随机访问<br><br>缺点：插入删除效率低，大小固定<br><br><img src="/uploads/datastruct/xulun/sequence.png" alt="顺序存储结构"><br><br></li>
-<li>链式存储方式：逻辑上相邻的元素其物理位置不一定相邻。不连续的内存空间。<br><br>优点：大小动态扩展，插入删除效率高<br><br>缺点：不能随机访问。<br><img src="/uploads/datastruct/xulun/chain.png" alt="链式存储结构"></li>
-<li>索引存储结构：为了方便查找，整体无序，但索引块之间有序，需要额外空间，存储索引表。<br><br>优点：对顺序查找的一种改进，查找效率高<br><br>缺点：需额外空间存储索引</li>
-<li>散列存储结构：选取某个函数，数据元素根据函数计算存储位置可能存在多个数据元素存储在同一位置，引起地址冲<br><br>优点：查找基于数据本身即可找到，查找效率高，存取效率高。<br><br>缺点：存取随机，不便于顺序查找。</li>
-</ul>
-<h4 id="1-3数据类型和抽象数据类型"><a href="#1-3数据类型和抽象数据类型" class="headerlink" title="1.3数据类型和抽象数据类型"></a>1.3数据类型和抽象数据类型</h4><ol>
-<li><strong>数据类型</strong>：是程序设计语言中，变量所具有的的数据种类，他限定了变量的取值范围和可做的操作。</li>
-<li><strong>抽象数据</strong>：（abstract data type,ADT） 是指一个数学模型以及定义在该模型上的一组操作。</li>
-</ol>
-<ul>
-<li>人可以只关心它的逻辑特征，不需要了解它的存储方式。</li>
-<li>抽象数据类型的特征是使用和实现相分离，实现封装和隐藏。</li>
-<li>抽象数据类型一般由元素、关系、操作三要素来定义。抽象数据类型可用三元组表示为：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(D,R,P)</div></pre></td></tr></table></figure>
-<ul>
-<li><em>其中：D是数据对象，R是D上的关系集，P是对D的基本操作集</em>。</li>
-</ul>
-<blockquote>
-<p>抽象数据类型定义可以用一下格式：<br><br><br>ADT 抽象数据类型{<br>数据对象：&lt;数据对象的定义&gt;<br>数据关系：&lt;数据关系的定义&gt;<br>基本操作：&lt;基本操作的定义&gt;<br>}ADT 抽象数据类型<br><br><br>数据对象和数据关系可以用伪代码描述，基本操作的定义格式如下:<br><br><br>基本操作名(参数表)<br>&emsp;&emsp;初始条件：&lt;初始条件描述&gt;<br>&emsp;&emsp;操作结果：&lt;操作结果描述&gt;<br><br></p>
-<blockquote>
-<p><strong>银行账户问题的抽象</strong><br>ADT BankAccount<br>{<br><em>数据对象：具有下列属性的元素</em><br>String ownerName;<br>int accountNamber;<br>float balance;//余额<br><em>数据关系：同属一个银行的账户</em><br><em>基本操作：</em><br>String getOwnerName();<br>int getAccountNumer();<br>float getBalance();<br>void setOwnerName(String newName);<br>void setAccountNumber(String newNumber);<br>void setBalance(float newBalance);<br>float desposit(float anAmount);//存款并返回余额<br>float withdraw(float anAmount);//取款并返回余额<br>} ADT BanckAccount;</p>
-</blockquote>
-</blockquote>
-<h4 id="1-4-算法和算法分析"><a href="#1-4-算法和算法分析" class="headerlink" title="1.4 算法和算法分析"></a>1.4 算法和算法分析</h4><ol>
-<li><strong>算法</strong>：是对特定问题求解步骤的一种描述，是指令的有限序列，其中每条指令表示一个或多个操作。  </li>
-</ol>
-<ul>
-<li><em>重要特征</em><br>有穷性、可行性、确定性、一个算法有零个或多个输入、一个算法有一个或多个输出</li>
-<li><em>好的算法满足要求</em><br>（1）正确性<br>（2）可读性<br>（3）健壮性<br>（4）高效性  </li>
-</ul>
-<ol>
-<li><strong>算法分析</strong><br>在算法分析中，用算法的时间复杂度和空间复杂度来度量这两当面效率。  </li>
-</ol>
-<ul>
-<li><em>算法的时间复杂度</em><br>（1）事后统计法：设置插入计时器<br>（2）事前分析估计法：<br>&emsp;a.算法的运行时间只是时间问题规模的函数。<br>&emsp;b.一个算法所耗时间，应该是该算法中每条语句执行时间之和，而每条语句执行时间与该语句执行次数（频度）与该语句执行一次所需时间的乘积。将原操作重复执行的次数和时间规模n之间的关系记为&emsp;<em>f(n)</em><br>&emsp;c.当问题的规模n趋于无穷大时，把f(n)的数量级成为算法的渐进时间复杂度，简称为时间复杂度，记为&emsp;<em>T(n)</em>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">T(n)=O(f(n))</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>随着问题规模n的增大，算法的执行时间的增长率和f(n)的增长率相同。<br>&emsp;算法分析时几个要点:<br>&emsp;&emsp;1.如果算法执行时间是一个与问题规模n无关的常数，则算法的时间复杂度为常数的阶，记为<em>T(n)=O(1)</em>。<br>&emsp;&emsp;2.当有若干分支循环语句时，算法的时间复杂度是嵌套层数最多的循环语句中最里层语句的频度所决定。<br>&emsp;&emsp;3.决定于分支中耗时最多的部分。<br>&emsp;&emsp;4.若执行频度是多项式，选取增长最快部分。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f(n)=2*n^3+5*n^2+n+c，则T(n)=O(n^3)。</div></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li><em>算法的空间复杂度</em>：  </li>
-</ul>
-<ol>
-<li><p><strong>定义</strong>：该算法所耗费的存储空间，它也是问题规模n的函数，记作：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">S(n)=O(f(n))</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>意义</strong>：空间复杂度是对一个算法在运行过程中临时占用存储空间的度量。一个算法在计算机存储器上所占用的存储空间，包括：<br>&emsp;（1）存储算法本身所占用的存储空间。<br>&emsp;（2）算法的输入、输出数据所占用的存储空间。<br>&emsp;（3）算法在运行过程中临时占用的存储空间。</p>
-</li>
-</ol>
+          数据结构要点笔记第一章 绪论1.1 研究对象
+数据结构：就是一门研究非数值计算的程序设计问题中计算机的操作对象，以及他们之间的关系和操作等的学科。
 
-          
+1.2 基本概念和术语
+数据：即信息的载体，是对客观事物的符号表示，指能输入到计算机中能被程序处理的符号的总称。如：字符、整数、声音、图形等。
+数据元
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/01/数据结构绪论/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1931,8 +1120,15 @@
       
         
           
-            <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**关于文件重命名**</div><div class="line">upload_move_file();<span class="comment">//移动  </span></div><div class="line">date()<span class="comment">//得到当前时间,格式自己定!  如; 假设当前上传的文件叫'1.jpg',你的文件域名叫file,上传的文件在根目录下面;  </span></div><div class="line">$date=date(<span class="string">'Ymdhis'</span>);<span class="comment">//得到当前时间,如;20070705163148  </span></div><div class="line">$fileName=$_FIFLES[<span class="string">'file'</span>][<span class="string">'name'</span>];<span class="comment">//得到上传文件的名字  </span></div><div class="line">$name=explode(<span class="string">'.'</span>,$fileName);<span class="comment">//将文件名以'.'分割得到后缀名,得到一个数组  </span></div><div class="line">$newPath=$date.<span class="string">'.'</span>.$name[<span class="number">1</span>];<span class="comment">//得到一个新的文件为'20070705163148.jpg',即新的路径 </span></div><div class="line"></div><div class="line">**关于上传文件**</div><div class="line">$imgname=$_FILES[<span class="string">'myfile'</span>][<span class="string">'name'</span>];</div><div class="line">$newnametail=explode(<span class="string">'.'</span>,$imgname);</div><div class="line">$truename=<span class="string">'ps'</span>.<span class="string">'.'</span>.$newnametail[<span class="number">1</span>];</div><div class="line">$tmp = $_FILES[<span class="string">'myfile'</span>][<span class="string">'tmp_name'</span>];</div><div class="line">$filepath =<span class="string">'../picture/'</span>;<span class="comment">//传到的文件夹路径</span></div><div class="line"><span class="keyword">if</span>(move_uploaded_file($tmp,$filepath.$truename))&#123;	</div><div class="line">    <span class="keyword">echo</span> <span class="string">"上传成功"</span>;</div><div class="line">    <span class="keyword">echo</span> $filepath.$truename;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"上传失败"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 正如:书上有句话说,实践是最好的学习方法!</span></div></pre></td></tr></table></figure>
-          
+          12345678910111213141516171819202122**关于文件重命名**upload_move_file();//移动  date()//得到当前时间,格式自己定!  如; 假设当前上传的文件叫'1.jpg',你的文件域名叫file,上传的文件在根目录下面;  $date=dat
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/16/php-文件上传/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2072,17 +1268,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/01/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
