@@ -88,7 +88,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/uploads/os/process2status.png">
 <meta property="og:image" content="http://yoursite.com/uploads/os/process5status.jpg">
-<meta property="og:updated_time" content="2019-05-03T09:18:20.873Z">
+<meta property="og:image" content="http://yoursite.com/uploads/os/zhouzhuan.png">
+<meta property="og:image" content="http://yoursite.com/uploads/os/zhouzhuanping.png">
+<meta property="og:updated_time" content="2019-05-05T13:08:12.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统知识点">
 <meta name="twitter:description" content="基本概念 操作系统（OS）：是一组控制和管理计算机硬件和软件资源、合理地对各类作业进行调度，以及方便用户的程序的集合。  作用： 用户与计算机之间的接口 计算机系统资源的管理者（计算机资源包括：运算器、控制器、存储器、输入输出设备） 实现计算机资源的抽象   功能： 处理机管理：进程控制、进程同步、进程通信、进程调度 存储管理：内存分配、内存保护、地址映射、内存扩充 设备管理：缓冲区管理、设备分配">
@@ -429,7 +431,8 @@
 <ol>
 <li><p>两种状态模型：<em>运行态</em> 和 <em>非运行态</em><br><img src="/uploads/os/process2status.png" alt="两状态"></p>
 </li>
-<li><p>五状态模型：(实际七状态模型)<br><img src="/uploads/os/process5status.jpg" alt="五状态"><br>引入挂起的进程状态转换模型：<br>&nbsp;&nbsp;&nbsp;&nbsp;增加了“挂起”的概念，当内存中没有就绪的进程时，系统将内存中处于阻塞的进程换出到外存disk（虚拟内存）中的挂起队列（阻塞挂起态）</p>
+<li><p>五状态模型：(实际七状态模型)<br><img src="/uploads/os/process5status.jpg" alt="五状态">  </p>
+<p>引入挂起的进程状态转换模型：<br>&nbsp;&nbsp;&nbsp;&nbsp;增加了“挂起”的概念，当内存中没有就绪的进程时，系统将内存中处于阻塞的进程换出到外存disk（虚拟内存）中的挂起队列（阻塞挂起态）</p>
 </li>
 </ol>
 </li>
@@ -541,13 +544,105 @@
 <ol>
 <li><p>周转时间：是指作业提交给系统开始，到作业完成的这段时间间隔。  </p>
 <p>其意义是，评价批处理系统的性能、选择作业调度方式与算法的重要准则之一  </p>
-<p>周转时间 = 后备队列等待时间 + 就绪队列等待时间* + CPU执行时间* + 等待I/O完成时间*  （注：*表示代表可能发生多次）  </p>
-<p>平均周转时间：  </p>
+<p>周转时间 = 后备队列等待时间 + 就绪队列等待时间* + CPU执行时间* + 等待I/O完成时间*  （注：*表示代表可能发生多次） </p>
+<p>平均周转时间：其意义，用于衡量不同作业调度算法对同一作业流的调度性能。<br><img src="/uploads/os/zhouzhuan.png" alt="平均周转时间"></p>
+<p>平均带权周转时间: 其意义，用于衡量同一作业调度算法对不同作业流的调度性能。<br><img src="/uploads/os/zhouzhuanping.png" alt="平均带权周转"></p>
+</li>
+<li><p>响应时间：用于评价分时系统的性能，这里选择分时系统中进程调度算法的重要原则之一。<br>响应时间 = 请求信息传送到处理机的时间 + 处理机处理信息的时间 + 响应信息返回终端时间</p>
+</li>
+<li><p>截止时间：评价实时系统性能的重要指标，是选择实时调度算法的准则。</p>
+</li>
+<li><p>优先权</p>
+</li>
+<li><p>处理机利用率</p>
+</li>
+<li><p>公平性</p>
+</li>
+<li><p>吞吐量：指在单位时间内系统所完成作业数，与批处理作业的平均长度密切有关。</p>
 </li>
 </ol>
 </li>
+<li><p>调度算法：3个，FCFS、SJF、优先级调度算法、时间片轮转调度算法</p>
+<ol>
+<li><p>先来先服务算法（FCFS）：用于短调度、长调度；有利于长作业（长进程）；其平均周转时间和平均带权周转时间受作业到达顺序和调度顺序影响。</p>
+</li>
+<li><p>优先级调度算法：按时限设定好的进程优先级选取级别最高者；</p>
+</li>
 </ol>
-<p>$$<br>T=\frac{1}{n}\sum_{i=1}^{n}{Ti}<br>$$</p>
+<ul>
+<li>抢占式（出现优先级更高者的，当前进程立即停止，能更好的满足紧迫作业，结合实时性高的系统）</li>
+<li>非抢占式（出现优先级更高者的，当前进程继续运行至结束或因等待时间而阻塞，然后更高级别者用处理机，多用于批处理系统）</li>
+</ul>
+<ol>
+<li>时间片轮转调度算法：将所有就绪进程按先来先服务原则排列成一个队列，每次调度时，首进程为其分配时间片，用完后中断，处理机执行下一个进程，该进程置于队尾。<br>时间片大小对系统性能有很大影响。  </li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>时间片短</th>
+<th>时间片较长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>利于短作业</td>
+<td>退化为先来先服务调度算法</td>
+</tr>
+<tr>
+<td>开销大</td>
+<td>无法满足用户需求</td>
+</tr>
+</tbody>
+</table>
+<h4 id="死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁"><a href="#死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁" class="headerlink" title="死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁"></a>死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁</h4><ol>
+<li><p>资源：<br>可剥夺性资源，如内存、处理机；<br>非剥夺性资源，如进程得到在使用完前，不能被别程序夺走，如打印机、磁带机；</p>
+</li>
+<li><p>死锁产生的原因：资源竞争不当以及进程的推进顺序不当有关。</p>
+<ul>
+<li>资源竞争：临界资源不能同时满足多个进程请求。</li>
+<li>进程推进顺序不当：进程本身的异步性决定了在其请求和释放资源时，选择时机不当可能会发生。</li>
+</ul>
+</li>
+<li><p>死锁产生的必要条件：<em>互斥、请求和保持、不可剥夺、循环等待</em></p>
+</li>
+<li><p>死锁的预防： </p>
+<ul>
+<li>破坏“请求和保持”条件；</li>
+<li>破坏“不可剥夺”条件；</li>
+<li>破坏“环路等待”条件；</li>
+</ul>
+</li>
+<li><p>死锁的避免：通过合理的资源分配确保不会出现循环等待的条件，从而避免死锁发生且更好支持并发资源合理使用。如，<a href="https://blog.csdn.net/qq_33414271/article/details/80245715" target="_blank" rel="external">银行家算法</a>。</p>
+</li>
+<li><p>死锁检测和恢复</p>
+<ul>
+<li>死锁检验：<em>死锁定理、安全性算法</em> 都是进行死锁检测的常见算法。</li>
+<li><p>死锁恢复：一旦检验到系统，就需要采用某种策略将其从死锁状态中恢复出来。可以从 <strong>剥夺资源</strong> 和 <strong>撤销进程</strong> 两个方面进行死锁恢复。  </p>
+<p>恢复方法：  </p>
+</li>
+</ul>
+<ol>
+<li>取消所有死锁进程；</li>
+<li>让每个死锁进程回退到上述某些安全性检查的时间点前，并重新启动所有进程；</li>
+<li>连续取消死锁进程直到不再存在死锁为止；</li>
+<li>连续抢占资源直到不再存在死锁为止；</li>
+</ol>
+</li>
+</ol>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>现代计算机都是以存储器为中心进行设计的，因此存储器管理成为操作系统的主要任务之一。   </p>
+<p>存储器层次结构：</p>
+<ul>
+<li>第一层：寄存器、高速缓冲存储器</li>
+<li>第二层：内存、磁盘缓存</li>
+<li>第三层：外存、可移动磁盘介质</li>
+</ul>
+<p>存储器管理的目的和任务：</p>
+<ul>
+<li>目的：要求操作系统的存储管理机构必须尽可能 <em>1、方便用户和提高内存的使用效率</em>，<em>2、使内存在成本、速度和规模之间获得较好的权衡</em>；</li>
+<li>任务：内存分配、地址映射（将程序逻辑地址转化为计算机认识的物理地址）、内存共享与保护、内存扩充（得到比物理空间更大的虚拟逻辑空间）</li>
+</ul>
 
       
     </div>
@@ -737,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程"><span class="nav-number">2.</span> <span class="nav-text">进程和线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程："><span class="nav-number">2.1.</span> <span class="nav-text">进程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程："><span class="nav-number">2.2.</span> <span class="nav-text">线程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥与同步"><span class="nav-number">2.3.</span> <span class="nav-text">互斥与同步</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度与死锁"><span class="nav-number">3.</span> <span class="nav-text">调度与死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调度：处理器的调度正是处理（处理器和内存资源）调度和分配的相关的工作。"><span class="nav-number">3.1.</span> <span class="nav-text">调度：处理器的调度正是处理（处理器和内存资源）调度和分配的相关的工作。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程和线程"><span class="nav-number">2.</span> <span class="nav-text">进程和线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进程："><span class="nav-number">2.1.</span> <span class="nav-text">进程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程："><span class="nav-number">2.2.</span> <span class="nav-text">线程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#互斥与同步"><span class="nav-number">2.3.</span> <span class="nav-text">互斥与同步</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度与死锁"><span class="nav-number">3.</span> <span class="nav-text">调度与死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调度：处理器的调度正是处理（处理器和内存资源）调度和分配的相关的工作。"><span class="nav-number">3.1.</span> <span class="nav-text">调度：处理器的调度正是处理（处理器和内存资源）调度和分配的相关的工作。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁"><span class="nav-number">3.2.</span> <span class="nav-text">死锁：由于临界资源的出现，以及允许进程并发执行，就会出现进程申请资源而被永远阻塞的情况，即为死锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理"><span class="nav-number">4.</span> <span class="nav-text">内存管理</span></a></li></ol></div>
             
 
           </div>
