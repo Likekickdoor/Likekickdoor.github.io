@@ -87,7 +87,7 @@
 <meta property="og:description" content="问题解释问题一使用java命令运行class文件提示“错误：找不到或无法加载主类“的问题分析 问题二描述：在学习JavaWeb时，发现一个问题，接口和抽象类无法被直接实例化，那么如何实现作为某些方法的返回值的呢？比如，在学习到使用RequestDispatcher接口时，我发现一个问题。RequestDispatcher xx = response.getRequestDispatcher();怎">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://images2018.cnblogs.com/blog/1111415/201712/1111415-20171209180138324-878761169.png">
-<meta property="og:updated_time" content="2019-05-21T06:43:53.209Z">
+<meta property="og:updated_time" content="2019-05-25T11:09:19.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java各类问题">
 <meta name="twitter:description" content="问题解释问题一使用java命令运行class文件提示“错误：找不到或无法加载主类“的问题分析 问题二描述：在学习JavaWeb时，发现一个问题，接口和抽象类无法被直接实例化，那么如何实现作为某些方法的返回值的呢？比如，在学习到使用RequestDispatcher接口时，我发现一个问题。RequestDispatcher xx = response.getRequestDispatcher();怎">
@@ -366,6 +366,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可变参数Object...</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">way</span><span class="params">(Object... params)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; params!=<span class="keyword">null</span> &amp;&amp; i&lt;params.length ; i++) &#123;</div><div class="line">			sum+=(<span class="keyword">int</span>)params[i];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> sum;</div><div class="line">	&#125;</div><div class="line"><span class="comment">//class</span></div><div class="line">	User user = (User) runner.query(sql, <span class="keyword">new</span> BeanHandler&lt;User&gt;(User.class), <span class="number">1</span>);</div><div class="line">		<span class="keyword">if</span>(runner <span class="keyword">instanceof</span> UserDaoUpdate) &#123;</div><div class="line">			<span class="comment">//true</span></div><div class="line">			System.out.println(<span class="string">"yes"</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(runner.getClass()==UserDaoUpdate.class) &#123;</div><div class="line">			<span class="comment">//true</span></div><div class="line">			System.out.println(<span class="string">"yes"</span>);</div><div class="line">		&#125;</div></pre></td></tr></table></figure>
 <h3 id="问题七"><a href="#问题七" class="headerlink" title="问题七"></a>问题七</h3><p><strong>描述</strong>：平台、架构、框架、设计模式的定义及其关系与理解  </p>
 <p><a href="https://www.cnblogs.com/yuan-jun/p/6732015.html" target="_blank" rel="external">平台&gt;架构&gt;框架&gt;设计模式</a><br><a href="https://blog.csdn.net/lianjiangwei/article/details/50864636" target="_blank" rel="external">图解</a></p>
+<h3 id="问题八"><a href="#问题八" class="headerlink" title="问题八"></a>问题八</h3><p><strong>描述</strong>：在复习数据库的时候，发现以前对各种join连接查询有一些疑问。搞清楚其区别请参照  </p>
+<p><a href="https://www.runoob.com/sql/sql-join-full.html" target="_blank" rel="external">菜鸟教程之SQL基础，关于常见的几种join连接查询</a><br><a href="https://www.cnblogs.com/fudashi/p/7491039.html" target="_blank" rel="external">MySQL的JOIN（一）：用法</a></p>
 
       
     </div>
@@ -399,6 +401,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/26/MySQL常见笔记/" rel="prev" title="MySQL各类问题或SQL语法问题">
+                MySQL各类问题或SQL语法问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -477,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +494,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -551,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解释"><span class="nav-number">1.</span> <span class="nav-text">问题解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三"><span class="nav-number">1.3.</span> <span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题四"><span class="nav-number">1.4.</span> <span class="nav-text">问题四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题五"><span class="nav-number">1.5.</span> <span class="nav-text">问题五</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题六"><span class="nav-number">1.6.</span> <span class="nav-text">问题六</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题七"><span class="nav-number">1.7.</span> <span class="nav-text">问题七</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解释"><span class="nav-number">1.</span> <span class="nav-text">问题解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三"><span class="nav-number">1.3.</span> <span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题四"><span class="nav-number">1.4.</span> <span class="nav-text">问题四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题五"><span class="nav-number">1.5.</span> <span class="nav-text">问题五</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题六"><span class="nav-number">1.6.</span> <span class="nav-text">问题六</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题七"><span class="nav-number">1.7.</span> <span class="nav-text">问题七</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题八"><span class="nav-number">1.8.</span> <span class="nav-text">问题八</span></a></li></ol></li></ol></div>
             
 
           </div>
