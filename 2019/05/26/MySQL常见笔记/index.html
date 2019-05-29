@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LikeKickDoorBlog">
 <meta property="og:description" content="SQL语法问题或笔记Having、Where描述：使用HAVING 子句可以让我们筛选分组后的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样   12345678910111213141516171819202122232425262728293031/*例子一，使用hav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-26T06:40:32.022Z">
+<meta property="og:updated_time" content="2019-05-29T12:40:08.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL各类问题或SQL语法问题">
 <meta name="twitter:description" content="SQL语法问题或笔记Having、Where描述：使用HAVING 子句可以让我们筛选分组后的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样   12345678910111213141516171819202122232425262728293031/*例子一，使用hav">
@@ -345,6 +345,9 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子一，使用having处理分组后结果</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">SUM</span>(a.count)&gt;<span class="number">200</span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子二，带Where和不带Where，得到相同效果</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> Websites.name, Websites.url, <span class="keyword">SUM</span>(access_log.count) <span class="keyword">AS</span> nums, websites.alexa <span class="keyword">FROM</span> (access_log</div><div class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> Websites</div><div class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id)</div><div class="line"><span class="keyword">WHERE</span> websites.alexa&lt;<span class="number">200</span></div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Websites.id</div><div class="line"><span class="keyword">HAVING</span> nums &gt; <span class="number">200</span></div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> Websites.name, Websites.url, <span class="keyword">SUM</span>(access_log.count) <span class="keyword">AS</span> nums, websites.alexa <span class="keyword">FROM</span> (access_log</div><div class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> Websites</div><div class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id)</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Websites.id</div><div class="line"><span class="keyword">HAVING</span> nums &gt; <span class="number">200</span> <span class="keyword">AND</span> websites.alexa&lt;<span class="number">200</span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子三，使用Where，添加筛选条件，无法和聚合函数直接使用</span></div><div class="line"><span class="comment">SELECT `id`,`name` FROM websites WHERE MAX(websites.alexa)&gt;websites.alexa;//错误</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> <span class="string">`id`</span>,<span class="string">`name`</span> <span class="keyword">FROM</span> websites <span class="keyword">WHERE</span> (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(websites.alexa) <span class="keyword">FROM</span> websites)&gt;websites.alexa;</div></pre></td></tr></table></figure>
 <h3 id="Group-By、Order-By"><a href="#Group-By、Order-By" class="headerlink" title="Group By、Order By"></a>Group By、Order By</h3><p><strong>描述：</strong><br>Group By分组的依据，即结果按照某个字段分成若干组进而进行操作。Order By分组结果或者直接结果排序的依据。  </p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子一，直接查询结果分组按照字段a.site_id为依据</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子二，再加上排序规则，直接结果按照nums的大小从小到大排序</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> nums</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子三，只用Order By</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> <span class="string">`url`</span> <span class="keyword">FROM</span> websites <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="string">`alexa`</span></div></pre></td></tr></table></figure>
+<h3 id="Mysql中key-、primary-key-、unique-key-与index区别"><a href="#Mysql中key-、primary-key-、unique-key-与index区别" class="headerlink" title="Mysql中key 、primary key 、unique key 与index区别"></a>Mysql中key 、primary key 、unique key 与index区别</h3><p><strong>描述：</strong> 在复习数据库知识时，遇到了索引的知识，发现mysql中unique key和unique index可以使用同样的SQL进行删除和建立为此感到很疑惑！（因为unique约束是建立在unique索引即unique key 上的）进而引出上述问题。  </p>
+<p>key基本是是index的同义词，但是mysql的key是同时具有constraint和index的意义，这点和其他数据库表现的可能有区别。<br>参考：<a href="https://www.cnblogs.com/zjfjava/p/6922494.html" target="_blank" rel="external">具体详细的讲解</a></p>
+
       
     </div>
     
@@ -377,6 +380,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/27/知识普及/" rel="prev" title="科普知识集">
+                科普知识集 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -455,7 +462,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -466,7 +473,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -529,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语法问题或笔记"><span class="nav-number">1.</span> <span class="nav-text">SQL语法问题或笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Having、Where"><span class="nav-number">1.1.</span> <span class="nav-text">Having、Where</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-By、Order-By"><span class="nav-number">1.2.</span> <span class="nav-text">Group By、Order By</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语法问题或笔记"><span class="nav-number">1.</span> <span class="nav-text">SQL语法问题或笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Having、Where"><span class="nav-number">1.1.</span> <span class="nav-text">Having、Where</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-By、Order-By"><span class="nav-number">1.2.</span> <span class="nav-text">Group By、Order By</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql中key-、primary-key-、unique-key-与index区别"><span class="nav-number">1.3.</span> <span class="nav-text">Mysql中key 、primary key 、unique key 与index区别</span></a></li></ol></li></ol></div>
             
 
           </div>
