@@ -87,7 +87,7 @@
 <meta property="og:description" content="问题解释问题一使用java命令运行class文件提示“错误：找不到或无法加载主类“的问题分析 问题二描述：在学习JavaWeb时，发现一个问题，接口和抽象类无法被直接实例化，那么如何实现作为某些方法的返回值的呢？比如，在学习到使用RequestDispatcher接口时，我发现一个问题。RequestDispatcher xx = response.getRequestDispatcher();怎">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://images2018.cnblogs.com/blog/1111415/201712/1111415-20171209180138324-878761169.png">
-<meta property="og:updated_time" content="2019-05-25T11:09:19.608Z">
+<meta property="og:updated_time" content="2019-06-10T16:08:00.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java各类问题">
 <meta name="twitter:description" content="问题解释问题一使用java命令运行class文件提示“错误：找不到或无法加载主类“的问题分析 问题二描述：在学习JavaWeb时，发现一个问题，接口和抽象类无法被直接实例化，那么如何实现作为某些方法的返回值的呢？比如，在学习到使用RequestDispatcher接口时，我发现一个问题。RequestDispatcher xx = response.getRequestDispatcher();怎">
@@ -368,6 +368,13 @@
 <p><a href="https://www.cnblogs.com/yuan-jun/p/6732015.html" target="_blank" rel="external">平台&gt;架构&gt;框架&gt;设计模式</a><br><a href="https://blog.csdn.net/lianjiangwei/article/details/50864636" target="_blank" rel="external">图解</a></p>
 <h3 id="问题八"><a href="#问题八" class="headerlink" title="问题八"></a>问题八</h3><p><strong>描述</strong>：在复习数据库的时候，发现以前对各种join连接查询有一些疑问。搞清楚其区别请参照  </p>
 <p><a href="https://www.runoob.com/sql/sql-join-full.html" target="_blank" rel="external">菜鸟教程之SQL基础，关于常见的几种join连接查询</a><br><a href="https://www.cnblogs.com/fudashi/p/7491039.html" target="_blank" rel="external">MySQL的JOIN（一）：用法</a></p>
+<h3 id="问题九"><a href="#问题九" class="headerlink" title="问题九"></a>问题九</h3><p><strong>描述</strong>：在复习Java的基本语法是突然想起了8种Java基本类型对应的包装类（对象类型）和5种引用类型<br>基本类型：  </p>
+<blockquote>
+<p>基本类型    包装类<br>boolean（布尔型）    Boolean<br>byte（字节型）    Byte<br>char（字符型）    Character<br>short（短整型）    Short<br>int（整型）    Integer<br>long（长整型）    Long<br>float（浮点型）    Float<br>double（双精度浮点型）    Double  </p>
+</blockquote>
+<p>引用类型包括：<br>类、接口、数组、枚举、注解。其中String属于类  </p>
+<h3 id="问题十"><a href="#问题十" class="headerlink" title="问题十"></a>问题十</h3><p><strong>描述</strong>：Java 对象引用方式 —— 强引用、软引用、弱引用和虚引用<br>从JDK1.2版本开始，把对象的引用分为四种级别，从而使程序能更加灵活的控制对象的生命周期。这四种级别由高到低依次为：强引用、软引用、弱引用和虚引用。为了解决内存操作不灵活这个问题，我们可以尝试使用软引用。  </p>
+<p>强引用：我们使用的大部分的引用都是强引用，这是使用最普遍的引用。如果一个对象具有强引用，那就类似于必不可少的生活用品，垃圾回收器绝不会回收它。当内存空间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不会靠随意回收具有强引用的对象来解决内存不足问题。<br>软引用：如果一个对象只具有软引用，那就类似于可有可物的生活用品。如果内存空间足够，垃圾回收器就不会回收它，如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被程序使用。软引用可用来实现内存敏感的高速缓存。<br>软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收，JAVA虚拟机就会把这个软引用加入到与之关联的引用队列中。<br><a href="https://www.cnblogs.com/renhui/p/6069437.html" target="_blank" rel="external">参考链接</a></p>
 
       
     </div>
@@ -483,7 +490,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +501,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -557,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解释"><span class="nav-number">1.</span> <span class="nav-text">问题解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三"><span class="nav-number">1.3.</span> <span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题四"><span class="nav-number">1.4.</span> <span class="nav-text">问题四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题五"><span class="nav-number">1.5.</span> <span class="nav-text">问题五</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题六"><span class="nav-number">1.6.</span> <span class="nav-text">问题六</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题七"><span class="nav-number">1.7.</span> <span class="nav-text">问题七</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题八"><span class="nav-number">1.8.</span> <span class="nav-text">问题八</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解释"><span class="nav-number">1.</span> <span class="nav-text">问题解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三"><span class="nav-number">1.3.</span> <span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题四"><span class="nav-number">1.4.</span> <span class="nav-text">问题四</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题五"><span class="nav-number">1.5.</span> <span class="nav-text">问题五</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题六"><span class="nav-number">1.6.</span> <span class="nav-text">问题六</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题七"><span class="nav-number">1.7.</span> <span class="nav-text">问题七</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题八"><span class="nav-number">1.8.</span> <span class="nav-text">问题八</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题九"><span class="nav-number">1.9.</span> <span class="nav-text">问题九</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题十"><span class="nav-number">1.10.</span> <span class="nav-text">问题十</span></a></li></ol></li></ol></div>
             
 
           </div>
