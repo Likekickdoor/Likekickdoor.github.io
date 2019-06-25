@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LikeKickDoorBlog">
 <meta property="og:description" content="本页收集一些有趣的Java面试问题，其中可以深入的了解J一些ava这门语言的特性和其所结合的其他计算机知识。 synchronized和volatile的应用场景区别synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T13:47:09.812Z">
+<meta property="og:updated_time" content="2019-06-12T13:38:26.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java面试问题">
 <meta name="twitter:description" content="本页收集一些有趣的Java面试问题，其中可以深入的了解J一些ava这门语言的特性和其所结合的其他计算机知识。 synchronized和volatile的应用场景区别synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字">
@@ -348,6 +348,48 @@
 <li>该变量没有包含在具有其他变量的不变式中  </li>
 </ol>
 <p><a href="https://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">参考volatile关键字解析，了解计算机系统并行概念三要点：原子性、可见性、有序性</a></p>
+<h3 id="Java-类加载机制和反射"><a href="#Java-类加载机制和反射" class="headerlink" title="Java 类加载机制和反射"></a>Java 类加载机制和反射</h3><p><a href="http://www.importnew.com/30567.html" target="_blank" rel="external">参考传送门</a>  </p>
+<h4 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h4><p>类加载器主要分为两类，一类是 JDK 默认提供的，一类是用户自定义的。 JDK 默认提供三种类加载器：  </p>
+<ol>
+<li>Bootstrap ClassLoader 启动类加载器：每次执行 java 命令时都会使用该加载器为虚拟机加载核心类。该加载器是由 native code 实现，而不是 Java 代码，加载类的路径为 <java_home>/jre/lib。特别的 <java_home>/jre/lib/rt.jar 中包含了 sun.misc.Launcher 类， 而 sun.misc.Launcher$ExtClassLoader 和 sun.misc.Launcher$AppClassLoader 都是 sun.misc.Launcher 的内部类，所以 <strong>拓展类加载器和系统类加载器都是由启动类加载器加载的</strong> 。</java_home></java_home></li>
+<li>Extension ClassLoader, 拓展类加载器：用于加载拓展库中的类。拓展库路径为 <java_home>/jre/lib/ext/。实现类为 sun.misc.Launcher$ExtClassLoader</java_home></li>
+<li>System ClassLoader 系统类加载器：用于加载 CLASSPATH 中的类。实现类为 sun.misc.Launcher$AppClassLoader</li>
+</ol>
+<p>用户自定义的加载器：<br>Custom ClassLoader, 一般都是 java.lang.ClassLoder 的子类  </p>
+<p>正统的类加载机制是基于双亲委派的，也就是当调用类加载器加载类时，首先将加载任务委派给双亲，若双亲无法加载成功时，自己才进行类加载。  </p>
+<p>在实例化一个新的类加载器时，我们可以为其指定一个 parent，即双亲，若未显式指定，则 System ClassLoader 就作为默认双亲。  </p>
+<h4 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h4><p>Reflection（反射）是Java被视为动态语言的关键，反射机制允许程序在执行期借助于Reflection API取得任何类的內部信息，并能直接操作任意对象的内部属性及方法。<a href="https://www.cnblogs.com/tech-bird/p/3525336.html" target="_blank" rel="external">反射参考详细</a><br>Java反射机制主要提供了以下功能：</p>
+<ul>
+<li>在运行时构造任意一个类的对象</li>
+<li>在运行时获取任意一个类所具有的成员变量和方法</li>
+<li>在运行时调用任意一个对象的方法（属性）</li>
+<li>生成动态代理  </li>
+</ul>
+<h3 id="ArrayList和LinkedList区别"><a href="#ArrayList和LinkedList区别" class="headerlink" title="ArrayList和LinkedList区别"></a>ArrayList和LinkedList区别</h3><p>通常情况下，ArrayList和LinkedList的区别有以下几点：</p>
+<ol>
+<li>ArrayList是实现了基于动态数组的数据结构，而LinkedList是基于链表的数据结构；</li>
+<li>对于随机访问get和set，ArrayList要优于LinkedList，因为LinkedList要移动指针；</li>
+<li>对于添加和删除操作add和remove，一般大家都会说LinkedList要比ArrayList快。</li>
+</ol>
+<h3 id="InputStream、OutputStream和Reader、Writer"><a href="#InputStream、OutputStream和Reader、Writer" class="headerlink" title="InputStream、OutputStream和Reader、Writer"></a>InputStream、OutputStream和Reader、Writer</h3><p>Java语言吧输入输出操作使用流来实现。按照数据的传输方向，流可以分为：  </p>
+<ul>
+<li>输入流</li>
+<li>输出流</li>
+</ul>
+<p>按内容划分：</p>
+<ul>
+<li>字节流：处理字节数据（InputStream、OutputStream）</li>
+<li>字符流：处理字符数据（Reader、Writer）</li>
+</ul>
+<p>数据流是Java程序发送和接受数据的一个通道，通常应用程序中使用输入流读出数据，输出流写入数据。  </p>
+<p>InputStream、OutputStream和Reader、Writer都是<strong>抽象类</strong> ，一般都不会直接使用，通常根据这些类的派生子类对文件处理。  </p>
+<p>标准输入输出流（静态流）（可以直接显示在显示台上）：  </p>
+<ul>
+<li>System.in是BufferedInputStream的对象</li>
+<li>System.out是PrintSream的对象</li>
+<li>System.err是PrintStream类派生的错误流</li>
+</ul>
+<h3 id="BIO和NIO、AIO的区别"><a href="#BIO和NIO、AIO的区别" class="headerlink" title="BIO和NIO、AIO的区别"></a>BIO和NIO、AIO的区别</h3><p>BIO：同步阻塞的BIO，面向流，是传统的IO模式，数据传输的过程是<strong>磁盘-&gt;内核空间缓冲区-&gt;用户空间缓冲区</strong><br>NIO：同步非阻塞的NIO，面向buffer，NIO本身是基于事件驱动思想来完成的，由一个线程监听事件，注册多个channel来处理线程发来的通知。<br><a href="https://blog.csdn.net/qq_28666081/article/details/82315086" target="_blank" rel="external">Java BIO与NIO的比较</a><br><a href="https://blog.csdn.net/ty497122758/article/details/78979302" target="_blank" rel="external">JAVA BIO与NIO、AIO的区别</a><br><a href="https://www.jianshu.com/p/8b3af5bf4ce1" target="_blank" rel="external">Java NIO与Java BIO的区别</a></p>
 
       
     </div>
@@ -381,6 +423,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/24/Java-Spring学习总结/" rel="prev" title="Spring学习总结">
+                Spring学习总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -459,7 +505,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -470,7 +516,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -533,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized和volatile的应用场景区别"><span class="nav-number">1.</span> <span class="nav-text">synchronized和volatile的应用场景区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized和volatile的应用场景区别"><span class="nav-number">1.</span> <span class="nav-text">synchronized和volatile的应用场景区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-类加载机制和反射"><span class="nav-number">2.</span> <span class="nav-text">Java 类加载机制和反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载机制"><span class="nav-number">2.1.</span> <span class="nav-text">类加载机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射"><span class="nav-number">2.2.</span> <span class="nav-text">反射</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList和LinkedList区别"><span class="nav-number">3.</span> <span class="nav-text">ArrayList和LinkedList区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InputStream、OutputStream和Reader、Writer"><span class="nav-number">4.</span> <span class="nav-text">InputStream、OutputStream和Reader、Writer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIO和NIO、AIO的区别"><span class="nav-number">5.</span> <span class="nav-text">BIO和NIO、AIO的区别</span></a></li></ol></div>
             
 
           </div>
