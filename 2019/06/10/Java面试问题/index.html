@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LikeKickDoorBlog">
 <meta property="og:description" content="本页收集一些有趣的Java面试问题，其中可以深入的了解J一些ava这门语言的特性和其所结合的其他计算机知识。 synchronized和volatile的应用场景区别synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-12T13:38:26.720Z">
+<meta property="og:updated_time" content="2019-06-28T16:01:00.466Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java面试问题">
 <meta name="twitter:description" content="本页收集一些有趣的Java面试问题，其中可以深入的了解J一些ava这门语言的特性和其所结合的其他计算机知识。 synchronized和volatile的应用场景区别synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字">
@@ -390,6 +390,44 @@
 <li>System.err是PrintStream类派生的错误流</li>
 </ul>
 <h3 id="BIO和NIO、AIO的区别"><a href="#BIO和NIO、AIO的区别" class="headerlink" title="BIO和NIO、AIO的区别"></a>BIO和NIO、AIO的区别</h3><p>BIO：同步阻塞的BIO，面向流，是传统的IO模式，数据传输的过程是<strong>磁盘-&gt;内核空间缓冲区-&gt;用户空间缓冲区</strong><br>NIO：同步非阻塞的NIO，面向buffer，NIO本身是基于事件驱动思想来完成的，由一个线程监听事件，注册多个channel来处理线程发来的通知。<br><a href="https://blog.csdn.net/qq_28666081/article/details/82315086" target="_blank" rel="external">Java BIO与NIO的比较</a><br><a href="https://blog.csdn.net/ty497122758/article/details/78979302" target="_blank" rel="external">JAVA BIO与NIO、AIO的区别</a><br><a href="https://www.jianshu.com/p/8b3af5bf4ce1" target="_blank" rel="external">Java NIO与Java BIO的区别</a></p>
+<h3 id="Java的跨平台原理"><a href="#Java的跨平台原理" class="headerlink" title="Java的跨平台原理"></a>Java的跨平台原理</h3><ol>
+<li>Java通过不同的系统、不同版本、不同位数的Java虚拟机（Jvm），来屏蔽不同的系统指令集差异而对外提供统一的接口（Java API），对于我们普通的Java开发者而言，只需要按照接口开发即可。如果我们编写的程序需要部署到不同的环境时，只需要在系统上面按照对应版本的虚拟机即可。  </li>
+<li>使用特定编译器编译的程序只能在对应的平台运行，这里也可以说编译器是与平台相关的，编译后的文件也是与平台相关的。<strong>我们说的语言跨平台是编译后的文件跨平台，而不是源程序跨平台</strong>，如果是源程序，任何一门语言都是跨平台的语言了。</li>
+</ol>
+<h3 id="面向对象的特征有哪些方面？（封装、抽象、继承、多态）"><a href="#面向对象的特征有哪些方面？（封装、抽象、继承、多态）" class="headerlink" title="面向对象的特征有哪些方面？（封装、抽象、继承、多态）"></a>面向对象的特征有哪些方面？（封装、抽象、继承、多态）</h3><ol>
+<li>面向对象的封装性，即将对象封装成一个<strong>高度自治和相对封闭的个体</strong>，对象状态（属性）由这个对象自己的行为（方法）来读取和改变。如：<br>某个对象有自己的属性和自己提供的获取或改变的方法来操作。</li>
+<li>抽象，就是找出一些对象的相似和共性之处，将这些对象归为一个类。这个过程就是抽象。</li>
+<li>继承，在定义和实现一个类的时候，可以在已经存在的类的基础之上，把已经存在的内容作为自己的内容，并可以对此修改增减。如，遗产继承。</li>
+<li>多态，一个引用变量到底会指向哪个类的实例对象，该引用变量发出的方法调用到底是哪各类中实现的方法，必须在由程序运行期间才能决定。<br>靠的是父类或接口定义的引用变量可以指向子类或具体实现类的实例对象，而程序调用的方法在运行期才动态绑定，就是引用变量所指向的具体实例对象的方法，也就是内存里正在运行的那个对象的方法，而不是引用变量的类型中定义的方法。如：  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Object obj = <span class="keyword">new</span> xxx();</div><div class="line">UserDao userDao = <span class="keyword">new</span> UserDaoJdbcImp();</div><div class="line">UserDao userDao = <span class="keyword">new</span> UserDaoHibernateImp();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="有了8中基本类型，为什么还需要包装类型"><a href="#有了8中基本类型，为什么还需要包装类型" class="headerlink" title="有了8中基本类型，为什么还需要包装类型"></a>有了8中基本类型，为什么还需要包装类型</h3><ul>
+<li>装箱：把基本的数据类型转换成包装类型Integer.valueOf(1)</li>
+<li>自动装箱：Integer=1；实际上在编译时会调用Integer.valueOf(1)方法来装箱。</li>
+<li>拆箱：把包装类型转换成基本的数据类型，Integer i = 1;int j = i.intValue();//手动拆箱</li>
+<li>自动拆箱：实际上会自动调用intValue()，Integer i = 1;int j = i;</li>
+<li>回答：<br>Java是面向对象的语言，而基本数据类型不具备面向对象特性。<br>Integer具有MAX和MIN属性，和缓冲值：对象缓存。</li>
+</ul>
+<h3 id="“-”和equals-的区别？"><a href="#“-”和equals-的区别？" class="headerlink" title="“==”和equals()的区别？"></a>“==”和equals()的区别？</h3><ul>
+<li>“==”用来判断两个变量之间的值是否相等。变量就可以分为基本数据类型变量，引用类型变量。如果是基本类型变量，直接比较变量值是否相同。而引用类型要比较对应的引用的内存首地址。</li>
+<li>equals() 用来比较两个对象是否长得一样。判断两个对象的某些特征是否一样，实际上就是调用对象的equals()方法进行比较。</li>
+</ul>
+<h3 id="String、StringBuffer、StringBuilder"><a href="#String、StringBuffer、StringBuilder" class="headerlink" title="String、StringBuffer、StringBuilder"></a>String、StringBuffer、StringBuilder</h3><p>在Java中提供三个类String、StringBuffer、StringBuilder来表示和操作字符串。字符串就是多个字符的集合。  </p>
+<ol>
+<li>String 是内容不可变得字符串。String底层使用了不可变的字符数组（final char[]）。String str = new String(“bbb”)  </li>
+<li>StringBuffer、StringBuilder是内容可以改变的字符串。StringBuilder、StringBuffer底层是使用可变的字符数组没使用final修饰  </li>
+</ol>
+<p>最经典的就是拼接字符串问题：  </p>
+<ol>
+<li>String c = “aa”+”bb”;这种效率最低，因为需要生成临时中间String对象，再合成最新String对象c</li>
+<li>StringBuffer或StringBuilder举例使用append()方法，如：StringBuffer c = new  StringBuffer().append(“aa”).append(bb);</li>
+</ol>
+<p>StringBuffer和StringBuilder的区别是：StringBuilder是线程不安全的但速度最快，StringBuffer是线程安全的（加了同步锁synchronized）但速度较慢。</p>
+<h3 id="讲一下Java中的集合"><a href="#讲一下Java中的集合" class="headerlink" title="讲一下Java中的集合"></a>讲一下Java中的集合</h3><p>Java中的集合分为value，key-value（分别归类：Collection、Map）两种。<br>存储值（value）有分为List和Set两种集合：</p>
+<ol>
+<li>List是有序的，可以重复。</li>
+<li>Set是无序的，不可以重复。根据equals和hashcode判断，也就是如果一个对象要存储在Set中，必须重写equals和hashCode方法。<br>键值对（key-value）的为Map集合。</li>
+</ol>
 
       
     </div>
@@ -424,8 +462,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/24/Java-Spring学习总结/" rel="prev" title="Spring学习总结">
-                Spring学习总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/24/Java-Spring学习总结01/" rel="prev" title="Spring学习总结01">
+                Spring学习总结01 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -505,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -579,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized和volatile的应用场景区别"><span class="nav-number">1.</span> <span class="nav-text">synchronized和volatile的应用场景区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-类加载机制和反射"><span class="nav-number">2.</span> <span class="nav-text">Java 类加载机制和反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载机制"><span class="nav-number">2.1.</span> <span class="nav-text">类加载机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射"><span class="nav-number">2.2.</span> <span class="nav-text">反射</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList和LinkedList区别"><span class="nav-number">3.</span> <span class="nav-text">ArrayList和LinkedList区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InputStream、OutputStream和Reader、Writer"><span class="nav-number">4.</span> <span class="nav-text">InputStream、OutputStream和Reader、Writer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIO和NIO、AIO的区别"><span class="nav-number">5.</span> <span class="nav-text">BIO和NIO、AIO的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized和volatile的应用场景区别"><span class="nav-number">1.</span> <span class="nav-text">synchronized和volatile的应用场景区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-类加载机制和反射"><span class="nav-number">2.</span> <span class="nav-text">Java 类加载机制和反射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类加载机制"><span class="nav-number">2.1.</span> <span class="nav-text">类加载机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射"><span class="nav-number">2.2.</span> <span class="nav-text">反射</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList和LinkedList区别"><span class="nav-number">3.</span> <span class="nav-text">ArrayList和LinkedList区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InputStream、OutputStream和Reader、Writer"><span class="nav-number">4.</span> <span class="nav-text">InputStream、OutputStream和Reader、Writer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BIO和NIO、AIO的区别"><span class="nav-number">5.</span> <span class="nav-text">BIO和NIO、AIO的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java的跨平台原理"><span class="nav-number">6.</span> <span class="nav-text">Java的跨平台原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象的特征有哪些方面？（封装、抽象、继承、多态）"><span class="nav-number">7.</span> <span class="nav-text">面向对象的特征有哪些方面？（封装、抽象、继承、多态）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有了8中基本类型，为什么还需要包装类型"><span class="nav-number">8.</span> <span class="nav-text">有了8中基本类型，为什么还需要包装类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“-”和equals-的区别？"><span class="nav-number">9.</span> <span class="nav-text">“==”和equals()的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String、StringBuffer、StringBuilder"><span class="nav-number">10.</span> <span class="nav-text">String、StringBuffer、StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#讲一下Java中的集合"><span class="nav-number">11.</span> <span class="nav-text">讲一下Java中的集合</span></a></li></ol></div>
             
 
           </div>

@@ -81,14 +81,14 @@
 
 <meta name="description" content="什么是Spring？基本介绍： Spring是一个开源框架 简化企业级应用开发而生。使用Spring可以使用简单有效的实现EJB的复杂功能 Spring是JavaEE/JavaSE的一站式框架  特点 方便解耦，简化开发：Spring就是一个大工厂， 可以将所有的对象和依赖关系交给Spring管理。（使用配置文件xml将类加载到项目中） AOP编程的支持，Spring提供面向切面的编程，可以方便的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring学习总结">
-<meta property="og:url" content="http://yoursite.com/2019/06/24/Java-Spring学习总结/index.html">
+<meta property="og:title" content="Spring学习总结01">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/Java-Spring学习总结01/index.html">
 <meta property="og:site_name" content="LikeKickDoorBlog">
 <meta property="og:description" content="什么是Spring？基本介绍： Spring是一个开源框架 简化企业级应用开发而生。使用Spring可以使用简单有效的实现EJB的复杂功能 Spring是JavaEE/JavaSE的一站式框架  特点 方便解耦，简化开发：Spring就是一个大工厂， 可以将所有的对象和依赖关系交给Spring管理。（使用配置文件xml将类加载到项目中） AOP编程的支持，Spring提供面向切面的编程，可以方便的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-25T16:36:28.894Z">
+<meta property="og:updated_time" content="2019-06-27T09:05:43.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring学习总结">
+<meta name="twitter:title" content="Spring学习总结01">
 <meta name="twitter:description" content="什么是Spring？基本介绍： Spring是一个开源框架 简化企业级应用开发而生。使用Spring可以使用简单有效的实现EJB的复杂功能 Spring是JavaEE/JavaSE的一站式框架  特点 方便解耦，简化开发：Spring就是一个大工厂， 可以将所有的对象和依赖关系交给Spring管理。（使用配置文件xml将类加载到项目中） AOP编程的支持，Spring提供面向切面的编程，可以方便的">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/24/Java-Spring学习总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/24/Java-Spring学习总结01/"/>
 
 
 
 
 
-  <title>Spring学习总结 | LikeKickDoorBlog</title>
+  <title>Spring学习总结01 | LikeKickDoorBlog</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/Java-Spring学习总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/24/Java-Spring学习总结01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JeffLiu">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring学习总结</h1>
+          <h1 class="post-title" itemprop="name headline">Spring学习总结01</h1>
         
 
         <div class="post-meta">
@@ -411,6 +411,23 @@
 </li>
 <li>BeanPostProcess类的作用，增强丰富某个Bean类的作用</li>
 </ol>
+<h3 id="Spring中属性的注入"><a href="#Spring中属性的注入" class="headerlink" title="Spring中属性的注入"></a>Spring中属性的注入</h3><ol>
+<li>对于类成员变量，注入方式有三种：</li>
+</ol>
+<ul>
+<li>利用构造方法注入（Spring支持）<br>通过构造方法注入Bean的属性或者是依赖对象，它保证了Bean实例在实例化后就可以使用。<br>通过<bean>构造器中的\<constructor-org\>元素里申明的属性，属性ref=”xx”为对象注入引用类型属性</constructor-org\></bean></li>
+<li>属性setter方法注入（Spring支持）<br>使用set方法注入，在Spring配置文件中，通过\<property\>设置注入的属性。<br>使用proerty元素对象中的属性ref=”xx”为对象注入引用类型属性</property\></li>
+<li>接口注入（Spring不支持）</li>
+<li>p名称空间<br>为简化XML文件配置，Spring2.5引入一个新的p名称空间。<br>p:&lt;属性名&gt;=”xxx” 引入常量值<br>p:&lt;属性名&gt;-ref=”xxx” 引入其它Bean对象</li>
+<li>SpEL注入<br>SpEL:Spring Expression Language,Spring表达语言，对依赖注入进行简化。<br>语法：#{表达式}<br>\<bean id="xx" value="#{表达式}" \=""><br>SpEL表达语言举例：<br>#{‘hello’} 使用字符串<br>#{beanId} 使用另一个bean<br>#{beanId.content.toUpperCase()} 使用指定名属性，并使用方法。<br>#{T(java.lang.Math).PI} 使用静态字段或方法<h3 id="复杂类型的属性注入"><a href="#复杂类型的属性注入" class="headerlink" title="复杂类型的属性注入"></a>复杂类型的属性注入</h3></bean></li>
+</ul>
+<ol>
+<li>数组类型，使用标签并填入值：\<property\>》\<list\>》\<value\></value\></list\></property\></li>
+<li>List集合类型，同数组类型使用标签并填入值：\<property\>》\<list\>》\<value\></value\></list\></property\></li>
+<li>Set集合类型，\<property\>》\<set\>》\<value\></value\></set\></property\></li>
+<li>Map集合类型，\<property\>》\<map\>》\<entry key="xx" value="xx" \=""></entry></map\></property\></li>
+<li>properties类型属性，\<property\>》\<props\>》\<pro key="xx" \="">\<pro></pro></pro></props\></property\></li>
+</ol>
 
       
     </div>
@@ -444,6 +461,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/27/Java-Spring学习总结02/" rel="prev" title="Spring学习总结02">
+                Spring学习总结02 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -522,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -596,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Spring？"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本介绍："><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解【IOC控制反转】和【DI依赖注入】"><span class="nav-number">1.4.</span> <span class="nav-text">理解【IOC控制反转】和【DI依赖注入】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解Spring工厂类及其差别"><span class="nav-number">2.</span> <span class="nav-text">理解Spring工厂类及其差别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring容器中的Bean"><span class="nav-number">3.</span> <span class="nav-text">Spring容器中的Bean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解Bean实例化的三种方法"><span class="nav-number">3.1.</span> <span class="nav-text">了解Bean实例化的三种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean的配置"><span class="nav-number">3.2.</span> <span class="nav-text">Bean的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean的生命周期"><span class="nav-number">3.3.</span> <span class="nav-text">Bean的生命周期</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Spring？"><span class="nav-number">1.</span> <span class="nav-text">什么是Spring？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本介绍："><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解【IOC控制反转】和【DI依赖注入】"><span class="nav-number">1.4.</span> <span class="nav-text">理解【IOC控制反转】和【DI依赖注入】</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解Spring工厂类及其差别"><span class="nav-number">2.</span> <span class="nav-text">理解Spring工厂类及其差别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring容器中的Bean"><span class="nav-number">3.</span> <span class="nav-text">Spring容器中的Bean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解Bean实例化的三种方法"><span class="nav-number">3.1.</span> <span class="nav-text">了解Bean实例化的三种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean的配置"><span class="nav-number">3.2.</span> <span class="nav-text">Bean的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean的生命周期"><span class="nav-number">3.3.</span> <span class="nav-text">Bean的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring中属性的注入"><span class="nav-number">3.4.</span> <span class="nav-text">Spring中属性的注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂类型的属性注入"><span class="nav-number">3.5.</span> <span class="nav-text">复杂类型的属性注入</span></a></li></ol></li></ol></div>
             
 
           </div>
