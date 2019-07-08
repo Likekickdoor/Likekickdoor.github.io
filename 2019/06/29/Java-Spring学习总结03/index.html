@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="博主信息123456789101112131415public class AboutMe &amp;#123;	private String Occupation = &quot;学生&quot;;	private String Skill = &quot;Java/PHP/Js/HMTL&quot;;	private String Knowledge = &quot;计算机网络/数据结构与算法/操作系统/数据库理论/&quot;;	String email =">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="SpringAOP学习AOP的相关概念和术语：AOP的底层实现原理 JDK动态代理方式：  CGLIB动态代理方式：    对于不使用接口的业务，无法使用JDK动态代理 CGLIB采用非常底层字节码技术，可以为一个类创建子类，解决无接口代理问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring学习总结03">
+<meta property="og:url" content="http://yoursite.com/2019/06/29/Java-Spring学习总结03/index.html">
 <meta property="og:site_name" content="LikeKickDoorBlog">
-<meta property="og:description" content="博主信息123456789101112131415public class AboutMe &amp;#123;	private String Occupation = &quot;学生&quot;;	private String Skill = &quot;Java/PHP/Js/HMTL&quot;;	private String Knowledge = &quot;计算机网络/数据结构与算法/操作系统/数据库理论/&quot;;	String email =">
+<meta property="og:description" content="SpringAOP学习AOP的相关概念和术语：AOP的底层实现原理 JDK动态代理方式：  CGLIB动态代理方式：    对于不使用接口的业务，无法使用JDK动态代理 CGLIB采用非常底层字节码技术，可以为一个类创建子类，解决无接口代理问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T14:40:51.946Z">
+<meta property="og:updated_time" content="2019-06-29T02:38:38.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="博主信息123456789101112131415public class AboutMe &amp;#123;	private String Occupation = &quot;学生&quot;;	private String Skill = &quot;Java/PHP/Js/HMTL&quot;;	private String Knowledge = &quot;计算机网络/数据结构与算法/操作系统/数据库理论/&quot;;	String email =">
+<meta name="twitter:title" content="Spring学习总结03">
+<meta name="twitter:description" content="SpringAOP学习AOP的相关概念和术语：AOP的底层实现原理 JDK动态代理方式：  CGLIB动态代理方式：    对于不使用接口的业务，无法使用JDK动态代理 CGLIB采用非常底层字节码技术，可以为一个类创建子类，解决无接口代理问题">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/29/Java-Spring学习总结03/"/>
 
 
 
 
 
-  <title>about | LikeKickDoorBlog</title>
+  <title>Spring学习总结03 | LikeKickDoorBlog</title>
   
 
 
@@ -240,42 +240,169 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/Java-Spring学习总结03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JeffLiu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/daxiao.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LikeKickDoorBlog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h3 id="博主信息"><a href="#博主信息" class="headerlink" title="博主信息"></a>博主信息</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AboutMe</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> String Occupation = <span class="string">"学生"</span>;</div><div class="line">	<span class="keyword">private</span> String Skill = <span class="string">"Java/PHP/Js/HMTL"</span>;</div><div class="line">	<span class="keyword">private</span> String Knowledge = <span class="string">"计算机网络/数据结构与算法/操作系统/数据库理论/"</span>;</div><div class="line">	String email = <span class="string">"day8th@163.com"</span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SpeakVoice</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(<span class="string">"我是一个热爱学习的码农...希望成为大牛的菜鸟..."</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Status</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(<span class="string">"寻找实习工作&amp;学习&amp;运动..."</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MoreInfo</span><span class="params">()</span></span>&#123;</div><div class="line">		System.out.println(<span class="string">"...待续..."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="建立此博客的主要目的"><a href="#建立此博客的主要目的" class="headerlink" title="建立此博客的主要目的"></a>建立此博客的主要目的</h3><ul>
-<li>当时需要实践Git操作知识</li>
-<li>将各个学习笔记记录在此，以便回顾</li>
-<li>可以回忆自己的学习经历，以做回忆  </li>
+          <h1 class="post-title" itemprop="name headline">Spring学习总结03</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T10:34:24+08:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java框架/" itemprop="url" rel="index">
+                    <span itemprop="name">Java框架</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="SpringAOP学习"><a href="#SpringAOP学习" class="headerlink" title="SpringAOP学习"></a>SpringAOP学习</h2><h3 id="AOP的相关概念和术语："><a href="#AOP的相关概念和术语：" class="headerlink" title="AOP的相关概念和术语："></a>AOP的相关概念和术语：</h3><h3 id="AOP的底层实现原理"><a href="#AOP的底层实现原理" class="headerlink" title="AOP的底层实现原理"></a>AOP的底层实现原理</h3><ol>
+<li><p>JDK动态代理方式：</p>
+</li>
+<li><p>CGLIB动态代理方式：</p>
+</li>
+</ol>
+<ul>
+<li>对于不使用接口的业务，无法使用JDK动态代理</li>
+<li>CGLIB采用非常底层字节码技术，可以为一个类创建子类，解决无接口代理问题</li>
 </ul>
-<blockquote>
-<p>口号：爱技术、爱生活<br>格拉德韦尔在《异数》：成功之人并非天资超人一等，而是付出了持续不断的努力。只要经过1万小时的锤炼，任何人都能从平凡变成超凡。要成为某个领域的专家，需要10000小时：如果每天工作八个小时，一周工作五天，那么成为一个领域的专家至少需要五年。</p>
-</blockquote>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/27/Java-Spring学习总结02/" rel="next" title="Spring学习总结02">
+                <i class="fa fa-chevron-left"></i> Spring学习总结02
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -409,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#博主信息"><span class="nav-number">1.</span> <span class="nav-text">博主信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立此博客的主要目的"><span class="nav-number">2.</span> <span class="nav-text">建立此博客的主要目的</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringAOP学习"><span class="nav-number">1.</span> <span class="nav-text">SpringAOP学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP的相关概念和术语："><span class="nav-number">1.1.</span> <span class="nav-text">AOP的相关概念和术语：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOP的底层实现原理"><span class="nav-number">1.2.</span> <span class="nav-text">AOP的底层实现原理</span></a></li></ol></li></ol></div>
             
 
           </div>
