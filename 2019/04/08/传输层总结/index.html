@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="SQL语法问题或笔记Having、Where描述：使用HAVING 子句可以让我们筛选分组后的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样   12345678910111213141516171819202122232425262728293031/*例子一，使用hav">
+<meta name="description" content="传输层知识 网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。  UDP&amp;amp;TCP的特点： 用户数据报协议UDP：  无连接的 尽最大可能交付的 没用拥塞控制 面向报文：对于应用程序传下来的报文不合并也不拆分，只添加UDP首部 支">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL各类问题或SQL语法问题">
-<meta property="og:url" content="http://yoursite.com/2019/05/26/MySQL常见笔记/index.html">
+<meta property="og:title" content="计算机网络之传输层知识总结">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/传输层总结/index.html">
 <meta property="og:site_name" content="LikeKickDoorBlog">
-<meta property="og:description" content="SQL语法问题或笔记Having、Where描述：使用HAVING 子句可以让我们筛选分组后的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样   12345678910111213141516171819202122232425262728293031/*例子一，使用hav">
+<meta property="og:description" content="传输层知识 网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。  UDP&amp;amp;TCP的特点： 用户数据报协议UDP：  无连接的 尽最大可能交付的 没用拥塞控制 面向报文：对于应用程序传下来的报文不合并也不拆分，只添加UDP首部 支">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T12:40:08.379Z">
+<meta property="og:image" content="http://yoursite.com/uploads/network/treehandshake.png">
+<meta property="og:image" content="http://yoursite.com/uploads/network/fourhandshake.jpg">
+<meta property="og:updated_time" content="2019-07-26T06:42:25.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL各类问题或SQL语法问题">
-<meta name="twitter:description" content="SQL语法问题或笔记Having、Where描述：使用HAVING 子句可以让我们筛选分组后的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样   12345678910111213141516171819202122232425262728293031/*例子一，使用hav">
+<meta name="twitter:title" content="计算机网络之传输层知识总结">
+<meta name="twitter:description" content="传输层知识 网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。  UDP&amp;amp;TCP的特点： 用户数据报协议UDP：  无连接的 尽最大可能交付的 没用拥塞控制 面向报文：对于应用程序传下来的报文不合并也不拆分，只添加UDP首部 支">
+<meta name="twitter:image" content="http://yoursite.com/uploads/network/treehandshake.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/26/MySQL常见笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/08/传输层总结/"/>
 
 
 
 
 
-  <title>MySQL各类问题或SQL语法问题 | LikeKickDoorBlog</title>
+  <title>计算机网络之传输层知识总结 | LikeKickDoorBlog</title>
   
 
 
@@ -252,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/MySQL常见笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/传输层总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JeffLiu">
@@ -269,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL各类问题或SQL语法问题</h1>
+          <h1 class="post-title" itemprop="name headline">计算机网络之传输层知识总结</h1>
         
 
         <div class="post-meta">
@@ -281,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-26T14:02:46+08:00">
-                2019-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-08T15:44:00+08:00">
+                2019-04-08
               </time>
             
 
@@ -304,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
+                  <a href="/categories/network/" itemprop="url" rel="index">
+                    <span itemprop="name">network</span>
                   </a>
                 </span>
 
@@ -341,12 +344,56 @@
       
 
       
-        <h2 id="SQL语法问题或笔记"><a href="#SQL语法问题或笔记" class="headerlink" title="SQL语法问题或笔记"></a>SQL语法问题或笔记</h2><h3 id="Having、Where"><a href="#Having、Where" class="headerlink" title="Having、Where"></a>Having、Where</h3><p><strong>描述：</strong><br>使用HAVING 子句可以让我们<strong>筛选分组后</strong>的各组数据，是可以将聚合函数（Aggregate Method）作为筛选条件的语句的关键字。Where无法和聚合函数一起使用。同时Having也支持聚合的同时像Where那样  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子一，使用having处理分组后结果</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">SUM</span>(a.count)&gt;<span class="number">200</span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子二，带Where和不带Where，得到相同效果</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> Websites.name, Websites.url, <span class="keyword">SUM</span>(access_log.count) <span class="keyword">AS</span> nums, websites.alexa <span class="keyword">FROM</span> (access_log</div><div class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> Websites</div><div class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id)</div><div class="line"><span class="keyword">WHERE</span> websites.alexa&lt;<span class="number">200</span></div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Websites.id</div><div class="line"><span class="keyword">HAVING</span> nums &gt; <span class="number">200</span></div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> Websites.name, Websites.url, <span class="keyword">SUM</span>(access_log.count) <span class="keyword">AS</span> nums, websites.alexa <span class="keyword">FROM</span> (access_log</div><div class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> Websites</div><div class="line"><span class="keyword">ON</span> access_log.site_id=Websites.id)</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Websites.id</div><div class="line"><span class="keyword">HAVING</span> nums &gt; <span class="number">200</span> <span class="keyword">AND</span> websites.alexa&lt;<span class="number">200</span></div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子三，使用Where，添加筛选条件，无法和聚合函数直接使用</span></div><div class="line"><span class="comment">SELECT `id`,`name` FROM websites WHERE MAX(websites.alexa)&gt;websites.alexa;//错误</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> <span class="string">`id`</span>,<span class="string">`name`</span> <span class="keyword">FROM</span> websites <span class="keyword">WHERE</span> (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(websites.alexa) <span class="keyword">FROM</span> websites)&gt;websites.alexa;</div></pre></td></tr></table></figure>
-<h3 id="Group-By、Order-By"><a href="#Group-By、Order-By" class="headerlink" title="Group By、Order By"></a>Group By、Order By</h3><p><strong>描述：</strong><br>Group By分组的依据，即结果按照某个字段分成若干组进而进行操作。Order By分组结果或者直接结果排序的依据。  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子一，直接查询结果分组按照字段a.site_id为依据</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子二，再加上排序规则，直接结果按照nums的大小从小到大排序</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> w.name,w.url,<span class="keyword">SUM</span>(a.count) <span class="keyword">AS</span> nums</div><div class="line"><span class="keyword">FROM</span> access_log <span class="keyword">AS</span> a</div><div class="line"><span class="keyword">JOIN</span> websites <span class="keyword">AS</span> w</div><div class="line"><span class="keyword">ON</span> a.site_id=w.id</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> a.site_id</div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> nums</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">例子三，只用Order By</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="keyword">SELECT</span> <span class="string">`url`</span> <span class="keyword">FROM</span> websites <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="string">`alexa`</span></div></pre></td></tr></table></figure>
-<h3 id="Mysql中key-、primary-key-、unique-key-与index区别"><a href="#Mysql中key-、primary-key-、unique-key-与index区别" class="headerlink" title="Mysql中key 、primary key 、unique key 与index区别"></a>Mysql中key 、primary key 、unique key 与index区别</h3><p><strong>描述：</strong> 在复习数据库知识时，遇到了索引的知识，发现mysql中unique key和unique index可以使用同样的SQL进行删除和建立为此感到很疑惑！（因为unique约束是建立在unique索引即unique key 上的）进而引出上述问题。  </p>
-<p>key基本是是index的同义词，但是mysql的key是同时具有constraint和index的意义，这点和其他数据库表现的可能有区别。<br>参考：<a href="https://www.cnblogs.com/zjfjava/p/6922494.html" target="_blank" rel="external">具体详细的讲解</a></p>
+        <h4 id="传输层知识"><a href="#传输层知识" class="headerlink" title="传输层知识"></a>传输层知识</h4><blockquote>
+<p>网络层只把分组发送到目的<strong>主机</strong>，但是真正通信的并不是主机而是<strong>主机中的进程</strong>。<strong>传输层提供了进程间的逻辑通信</strong>，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。</p>
+</blockquote>
+<h5 id="UDP-amp-TCP的特点："><a href="#UDP-amp-TCP的特点：" class="headerlink" title="UDP&amp;TCP的特点："></a>UDP&amp;TCP的特点：</h5><ol>
+<li><p>用户数据报协议UDP：</p>
+<ul>
+<li>无连接的</li>
+<li>尽最大可能交付的</li>
+<li>没用拥塞控制</li>
+<li>面向报文：对于应用程序传下来的报文不合并也不拆分，只添加UDP首部</li>
+<li>支持一对一、一对多、多对多</li>
+<li>应用：视频直播、DNS等，要求速度快而不需可靠</li>
+</ul>
+</li>
+<li><p>传输控制协议TCP：</p>
+<ul>
+<li>面向连接的</li>
+<li>提供可靠交付</li>
+<li>有流量控制，拥塞控制</li>
+<li>全双工通信</li>
+<li>面向字节流：把应用传下来的报文看成字节流，把字节流组织成大小不等的数据块</li>
+<li>每一条TCP连接只能一对一</li>
+<li>应用：邮件传输、文件传输等，要求可靠。</li>
+</ul>
+</li>
+</ol>
+<h5 id="TCP三报文握手"><a href="#TCP三报文握手" class="headerlink" title="TCP三报文握手"></a>TCP三报文握手</h5><p><img src="/uploads/network/treehandshake.png" alt="握手"></p>
+<ol>
+<li>TCP服务器进程先创建传输控制块TCB，时刻准备接受客户进程的连接请求，此时服务器就进入了LISTEN（监听）状态；</li>
+<li>TCP客户进程也是先创建传输控制块TCB，然后向服务器发出连接请求报文，这是报文首部中的同部位SYN=1，同时选择一个初始序列号 seq=x ，此时，TCP客户端进程进入了 SYN-SENT（同步已发送状态）状态。TCP规定，SYN报文段（SYN=1的报文段）不能携带数据，但需要消耗掉一个序号。</li>
+<li>TCP服务器收到请求报文后，如果同意连接，则发出确认报文。确认报文中应该 ACK=1，SYN=1，确认号是ack=x+1，同时也要为自己初始化一个序列号 seq=y，此时，TCP服务器进程进入了SYN-RCVD（同步收到）状态。这个报文也不能携带数据，但是同样要消耗一个序号。</li>
+<li>TCP客户进程收到确认后，还要向服务器给出确认。确认报文的ACK=1，ack=y+1，自己的序列号seq=x+1，此时，TCP连接建立，客户端进入ESTABLISHED（已建立连接）状态。TCP规定，ACK报文段可以携带数据，但是如果不携带数据则不消耗序号。</li>
+<li>当服务器收到客户端的确认后也进入ESTABLISHED状态，此后双方就可以开始通信了。</li>
+</ol>
+<h5 id="TCP四报文挥手"><a href="#TCP四报文挥手" class="headerlink" title="TCP四报文挥手"></a>TCP四报文挥手</h5><p><img src="/uploads/network/fourhandshake.jpg" alt="挥手"></p>
+<ol>
+<li>客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。</li>
+<li>服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。</li>
+<li>客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）。</li>
+<li>服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。</li>
+<li>客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。注意此时TCP连接还没有释放，必须经过2∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。</li>
+<li>服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些。</li>
+</ol>
+<h5 id="为什么客户端最后还要等待2MSL？"><a href="#为什么客户端最后还要等待2MSL？" class="headerlink" title="为什么客户端最后还要等待2MSL？"></a>为什么客户端最后还要等待2MSL？</h5><blockquote>
+<p>MSL（Maximum Segment Lifetime），TCP允许不同的实现可以设置不同的MSL值。 第一，保证客户端发送的最后一个ACK报文能够到达服务器，因为这个ACK报文可能丢失，站在服务器的角度看来，我已经发送了FIN+ACK报文请求断开了，客户端还没有给我回应，应该是我发送的请求断开报文它没有收到，于是服务器又会重新发送一次，而客户端就能在这个2MSL时间段内收到这个重传的报文，接着给出回应报文，并且会重启2MSL计时器。 第二，防止类似与“三次握手”中提到了的“已经失效的连接请求报文段”出现在本连接中。客户端发送完最后一个确认报文后，在这个2MSL时间中，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失。这样新的连接中不会出现旧连接的请求报文。</p>
+</blockquote>
+<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><hr>
+<p><a href="https://blog.csdn.net/qzcsu/article/details/72861891" target="_blank" rel="external">参考原文1：https://blog.csdn.net/qzcsu/article/details/72861891</a></p>
+<p><a href="http://cyc2018.gitee.io/cs-notes/#/notes/" target="_blank" rel="external">参考原文2：http://cyc2018.gitee.io/cs-notes/#/notes/</a> </p>
+<hr>
 
       
     </div>
@@ -371,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/03/Java常见问题/" rel="next" title="java各类问题">
-                <i class="fa fa-chevron-left"></i> java各类问题
+              <a href="/2019/04/07/计算机网络问题/" rel="next" title="在浏览器输入URL后发生了什么">
+                <i class="fa fa-chevron-left"></i> 在浏览器输入URL后发生了什么
               </a>
             
           </div>
@@ -381,8 +428,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/27/知识普及/" rel="prev" title="科普知识集">
-                科普知识集 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/12/Java常用类及其方法/" rel="prev" title="java常用类及其方法">
+                java常用类及其方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -536,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语法问题或笔记"><span class="nav-number">1.</span> <span class="nav-text">SQL语法问题或笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Having、Where"><span class="nav-number">1.1.</span> <span class="nav-text">Having、Where</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-By、Order-By"><span class="nav-number">1.2.</span> <span class="nav-text">Group By、Order By</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql中key-、primary-key-、unique-key-与index区别"><span class="nav-number">1.3.</span> <span class="nav-text">Mysql中key 、primary key 、unique key 与index区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层知识"><span class="nav-number">1.</span> <span class="nav-text">传输层知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP-amp-TCP的特点："><span class="nav-number">1.1.</span> <span class="nav-text">UDP&TCP的特点：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP三报文握手"><span class="nav-number">1.2.</span> <span class="nav-text">TCP三报文握手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP四报文挥手"><span class="nav-number">1.3.</span> <span class="nav-text">TCP四报文挥手</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为什么客户端最后还要等待2MSL？"><span class="nav-number">1.4.</span> <span class="nav-text">为什么客户端最后还要等待2MSL？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">2.</span> <span class="nav-text">参考：</span></a></li></ol></div>
             
 
           </div>
