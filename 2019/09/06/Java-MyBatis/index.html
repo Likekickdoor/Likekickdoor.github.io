@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁">
+<meta name="description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁  mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别 关于#{}  #{}表示一个占位符号，通过 #{} 可以实现 preparedStatement 向占位符中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis学习总结01">
 <meta property="og:url" content="http://yoursite.com/2019/09/06/Java-MyBatis/index.html">
 <meta property="og:site_name" content="LikeKickDoorBlog">
-<meta property="og:description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁">
+<meta property="og:description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁  mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别 关于#{}  #{}表示一个占位符号，通过 #{} 可以实现 preparedStatement 向占位符中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-06T12:32:30.732Z">
+<meta property="og:updated_time" content="2019-09-30T09:57:22.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis学习总结01">
-<meta name="twitter:description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁">
+<meta name="twitter:description" content="分页原理 内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存 物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁  mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别 关于#{}  #{}表示一个占位符号，通过 #{} 可以实现 preparedStatement 向占位符中">
 
 
 
@@ -345,6 +345,26 @@
 <li>内存分页：一次性从数据库中将结果查询出置于内存，然后一部分一部分的使用。优点：后续取数据速度快。缺点：占内存</li>
 <li>物理分页：将查询分为一块块的范围，多次请求数据库。优点：内存开支小。缺点：访问数据库次数频繁</li>
 </ul>
+<h2 id="mybatis-之Mapper-xml配置文件-和-的区别"><a href="#mybatis-之Mapper-xml配置文件-和-的区别" class="headerlink" title="mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别"></a>mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别</h2><ul>
+<li><p>关于#{}</p>
+<ol>
+<li>#{}表示一个占位符号，通过 #{} 可以实现 preparedStatement 向占位符中设置值，自动进行 java 类型和 jdbc 类型转换;</li>
+<li>#{} 可以有效防止 sql注入;</li>
+<li>#{} 可以接收简单类型值或 pojo 属性值。如果 parameterType 传输单个简单类型值，#{} 括号中可以是 value 或其它名称;</li>
+<li>Map作为参数类型，key和占位符中的名称一致即可，如果名称不一致那么将会把null，传递到占位符中。</li>
+<li>注意：  <blockquote>
+<p>#{}占位符不能解决一下 3 类问题：<br>表名是动态的： Select <em> from #{table_name}<br>列名是动态的：Select #{column_name} from t_role<br>排序列是动态的： Select </em> from t_role order by #{columu}</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>关于${}</p>
+<ol>
+<li>${}表示拼接sql串，通过 ${} 可以将 parameterType 传入的内容拼接在 sql 中且不进行 jdbc 类型转换，不能防止 sql 注入问题;</li>
+<li>可以接收简单类型值或pojo属性值，如果parameterType传输单个简单类型值，{} 括号中只能是 value。</li>
+</ol>
+</li>
+</ul>
 
       
     </div>
@@ -530,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分页原理"><span class="nav-number">1.</span> <span class="nav-text">分页原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#分页原理"><span class="nav-number">1.</span> <span class="nav-text">分页原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mybatis-之Mapper-xml配置文件-和-的区别"><span class="nav-number">2.</span> <span class="nav-text">mybatis 之Mapper.xml配置文件 #{} 和 ${} 的区别</span></a></li></ol></div>
             
 
           </div>
